@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'My First app';
-  candidate1 = new Candidate('William', 'Jones', '15-04-1988');
-  candidate2 = new Candidate('Olivia', 'Perry', '22-07-1996');
+  candidate1 = new Candidate('William', 'Jones', new Date(1988, 3, 15));
+  candidate2 = new Candidate('Olivia', 'Perry', new Date(1996, 6, 22));
 
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
