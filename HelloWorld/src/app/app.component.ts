@@ -1,5 +1,5 @@
-import { Candidate } from './models/candidate.model';
 import { Component, OnInit } from '@angular/core';
+import { Candidate } from './models/candidate.model';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +13,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
+    const candidates: Candidate[] = [this.candidate1, this.candidate2];
+    console.log(candidates);
   }
 }
