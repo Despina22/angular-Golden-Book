@@ -12,4 +12,8 @@ export class User implements BaseEntity {
     this.email = email;
     this.phone = phone;
   }
+
+  sayHello(): void {
+    console.log('Hello from User class');
+  }
 }

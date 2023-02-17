@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
   title = 'My First app';
 
   user1 = new User(1, 'Mark', 'mark@gmail.com', '985-659-745');
-  user2 = new User(1, 'Lea', 'lea@gmail.com', '985-659-852');
+  user2 = new User(2, 'Lea', 'lea@gmail.com', '985-659-852');
+  user3 = new User(3, 'Mary', 'mary@gmail.com', '123-659-987');
 
   candidate1 = new Candidate('William', 'Jones', new Date(1988, 3, 15));
   candidate2 = new Candidate('Olivia', 'Perry', new Date(1996, 6, 22));
@@ -43,6 +44,7 @@ export class AppComponent implements OnInit {
     '963-753-654',
     'Sales Manager'
   );
+  employee5 = new Employee(5, 'Bob', 'bob@gmail.com', '456-753-321', 'Sales');
 
   customer1Address = new Address('Anson Fairway', 16, 'Tacoma', 'Washington');
   customer1 = new Customer(
@@ -77,6 +79,14 @@ export class AppComponent implements OnInit {
     'john@gmail.com',
     '987-123-456',
     this.customer4Address
+  );
+  customer5Address = new Address('Anson Fairway', 22, 'Tacoma', 'Washington');
+  customer5 = new Customer(
+    5,
+    'Sam',
+    'sam@gmail.com',
+    '987-654-654',
+    this.customer5Address
   );
 
   product1 = new Product(
@@ -115,6 +125,12 @@ export class AppComponent implements OnInit {
     1.99,
     'classically sweet and almost caramelized in flavor'
   );
+  product7 = new Product(
+    7,
+    'Mashrooms',
+    1.99,
+    'classically sweet and almost caramelized in flavor'
+  );
 
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
@@ -136,7 +152,12 @@ export class AppComponent implements OnInit {
     console.log('Product 4:', this.product4);
     console.log('Product 5:', this.product5);
 
-    const baseEntity: BaseEntity = { id: 5 };
+    const baseEntity: BaseEntity = {
+      id: 5,
+      sayHello() {
+        console.log('Hello from Base Entity');
+      },
+    };
     console.log(baseEntity);
 
     console.log(
@@ -148,6 +169,11 @@ export class AppComponent implements OnInit {
        A class can have multiple instances, while an interface does not have any
        instances on its own.`
     );
+
+    this.user3.sayHello();
+    this.product7.sayHello();
+    this.customer5.sayHello();
+    this.employee5.sayHello();
   }
 
   printCandidates(candidates: Candidate[]): string {
