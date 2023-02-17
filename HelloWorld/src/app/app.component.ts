@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     1,
     'Joe',
     'joe456@gmail.com',
-    120 - 466 - 652,
+    '120 - 466 - 652',
     'Redmond, WA 78214'
   );
 
@@ -47,8 +47,6 @@ export class AppComponent implements OnInit {
 
     console.log('Employee 1:', this.employee1);
     console.log('Employee 2:', this.employee2);
-
-    console.log(this.customer1.customerInfo());
   }
 
   printCandidates(candidates: Candidate[]): string {

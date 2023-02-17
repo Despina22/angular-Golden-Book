@@ -3,7 +3,7 @@ export class Customer {
     private id: number,
     private name: string,
     private email: string,
-    private phone: number,
+    private phone: string,
     private address: string
   ) {
     this.id;
