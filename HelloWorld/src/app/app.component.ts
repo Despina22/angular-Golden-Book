@@ -1,3 +1,4 @@
+import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
 import { Component, OnInit } from '@angular/core';
 import { Candidate } from './models/candidate.model';
@@ -27,6 +28,14 @@ export class AppComponent implements OnInit {
     'Attorney'
   );
 
+  customer1 = new Customer(
+    1,
+    'Joe',
+    'joe456@gmail.com',
+    120 - 466 - 652,
+    'Redmond, WA 78214'
+  );
+
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
 
@@ -38,6 +47,8 @@ export class AppComponent implements OnInit {
 
     console.log('Employee 1:', this.employee1);
     console.log('Employee 2:', this.employee2);
+
+    console.log(this.customer1.customerInfo());
   }
 
   printCandidates(candidates: Candidate[]): string {
