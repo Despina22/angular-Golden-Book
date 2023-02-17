@@ -1,3 +1,4 @@
+import { Address } from './models/address.model';
 import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
 import { Component, OnInit } from '@angular/core';
@@ -28,19 +29,22 @@ export class AppComponent implements OnInit {
     'Attorney'
   );
 
+  customer1Address = new Address('Anson Fairway', 16, 'Tacoma', 'Washington');
   customer1 = new Customer(
     1,
     'Joe',
     'joe456@gmail.com',
     '120 - 466 - 652',
-    'Redmond, WA 78214'
+    this.customer1Address
   );
+
+  customer2Address = new Address('Arden Quay', 12, 'Vancouver', 'Washington');
   customer2 = new Customer(
     1,
     'John',
     'john456@gmail.com',
     '120 - 255 - 352',
-    'Redmond, WA 78214'
+    this.customer2Address
   );
 
   ngOnInit(): void {

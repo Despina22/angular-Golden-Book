@@ -1,10 +1,11 @@
+import { Address } from './address.model';
 export class Customer {
   constructor(
     private id: number,
     private name: string,
     private email: string,
     private phone: string,
-    private address: string
+    private address: Address
   ) {
     this.id;
     this.name;
