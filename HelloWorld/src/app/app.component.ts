@@ -5,6 +5,7 @@ import { Employee } from './models/employee.model';
 import { Component, OnInit } from '@angular/core';
 import { Candidate } from './models/candidate.model';
 import { User } from './models/base/user.model';
+import { BaseEntity } from './models/base/baseEntity.model';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit {
   title = 'My First app';
 
   user1 = new User(1, 'Mark', 'mark@gmail.com', '985-659-745');
+  user2 = new User(1, 'Lea', 'lea@gmail.com', '985-659-852');
 
   candidate1 = new Candidate('William', 'Jones', new Date(1988, 3, 15));
   candidate2 = new Candidate('Olivia', 'Perry', new Date(1996, 6, 22));
@@ -34,6 +36,13 @@ export class AppComponent implements OnInit {
     'Attorney'
   );
   employee3 = new Employee(3, 'Jane', 'jane@gmail.com', '963-852-654', 'Sales');
+  employee4 = new Employee(
+    4,
+    'Sam',
+    'sam@gmail.com',
+    '963-753-654',
+    'Sales Manager'
+  );
 
   customer1Address = new Address('Anson Fairway', 16, 'Tacoma', 'Washington');
   customer1 = new Customer(
@@ -60,6 +69,14 @@ export class AppComponent implements OnInit {
     'jonas@gmail.com',
     '654-852-746',
     this.customer3Address
+  );
+  customer4Address = new Address('Arden Quay', 18, 'Vancouver', 'Washington');
+  customer4 = new Customer(
+    4,
+    'John',
+    'john@gmail.com',
+    '987-123-456',
+    this.customer4Address
   );
 
   product1 = new Product(
@@ -92,6 +109,12 @@ export class AppComponent implements OnInit {
     1.99,
     'Mild, aromatic, classically sweet and almost caramelized in flavor'
   );
+  product6 = new Product(
+    6,
+    'Potatoes',
+    1.99,
+    'classically sweet and almost caramelized in flavor'
+  );
 
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
@@ -112,6 +135,19 @@ export class AppComponent implements OnInit {
     console.log('Product 3:', this.product3);
     console.log('Product 4:', this.product4);
     console.log('Product 5:', this.product5);
+
+    const baseEntity: BaseEntity = { id: 5 };
+    console.log(baseEntity);
+
+    console.log(
+      `Difference between classes and interface:
+       Classes we use to define the structure of an object,
+       and also provide the implementation of methods and properties.
+       And interface we use only to define the structure of an object,
+       and can not provide any implementation details.
+       A class can have multiple instances, while an interface does not have any
+       instances on its own.`
+    );
   }
 
   printCandidates(candidates: Candidate[]): string {

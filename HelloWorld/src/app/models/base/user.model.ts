@@ -1,5 +1,7 @@
-export class User {
-  protected id: number;
+import { BaseEntity } from './baseEntity.model';
+
+export class User implements BaseEntity {
+  readonly id: number;
   protected name: string;
   protected email: string;
   protected phone: string;
