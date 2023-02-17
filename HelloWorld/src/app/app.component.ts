@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Candidate } from './models/candidate.model';
 import { User } from './models/base/user.model';
 import { BaseEntity } from './models/base/baseEntity.model';
+import { Post } from './models/base/post.model';
 
 @Component({
   selector: 'app-root',
@@ -174,6 +175,23 @@ export class AppComponent implements OnInit {
     this.product7.sayHello();
     this.customer5.sayHello();
     this.employee5.sayHello();
+
+    const post1: Post = {
+      id: 1,
+      title: 'Daily News',
+      description: 'News from today',
+      dateCreated: new Date(2022, 1, 16),
+      numberOfLikes: 30,
+    };
+    const post2: Post = {
+      id: 2,
+      title: 'BBC News',
+      description: 'News from today',
+      dateCreated: new Date(2022, 1, 17),
+      numberOfLikes: 120,
+    };
+    console.log('Post 1:', post1);
+    console.log('Post 2:', post2);
   }
 
   printCandidates(candidates: Candidate[]): string {
