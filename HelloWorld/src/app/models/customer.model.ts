@@ -1,16 +1,14 @@
+import { User } from './base/user.model';
 import { Address } from './address.model';
-export class Customer {
+export class Customer extends User {
   constructor(
-    private id: number,
-    private name: string,
-    private email: string,
-    private phone: string,
+    id: number,
+    name: string,
+    email: string,
+    phone: string,
     private address: Address
   ) {
-    this.id;
-    this.name;
-    this.email;
-    this.phone;
+    super(id, name, email, phone);
     this.address;
   }
 
