@@ -7,6 +7,7 @@ import { Candidate } from './models/candidate.model';
 import { User } from './models/base/user.model';
 import { BaseEntity } from './models/base/baseEntity.model';
 import { Post } from './models/base/post.model';
+import { Book } from './models/base/book.model';
 
 @Component({
   selector: 'app-root',
@@ -192,6 +193,29 @@ export class AppComponent implements OnInit {
     };
     console.log('Post 1:', post1);
     console.log('Post 2:', post2);
+
+    const book1: Book = {
+      id: 1,
+      title: 'Anna Karenina',
+      description:
+        'Anna is intelligent and literate, a reader of English novels and a writer of childrens books.She is elegant, always understated in her dress...',
+      dateCreated: new Date(1878),
+      author: 'Leo Tolstoy',
+      numberOfStars: 5,
+      category: 'Realist novel',
+    };
+    const book2: Book = {
+      id: 2,
+      title: 'Harry Potter',
+      description:
+        'Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, ...',
+      dateCreated: new Date(1997, 5, 26),
+      author: 'J.K.Rowling',
+      numberOfStars: 5,
+      category: 'Fantasy',
+    };
+    console.log('Book 1:', book1);
+    console.log('Book 2:', book2);
   }
 
   printCandidates(candidates: Candidate[]): string {
