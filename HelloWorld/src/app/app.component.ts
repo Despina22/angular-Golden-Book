@@ -1,3 +1,4 @@
+import { Product } from './models/product.model';
 import { Address } from './models/address.model';
 import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
@@ -61,6 +62,37 @@ export class AppComponent implements OnInit {
     this.customer3Address
   );
 
+  product1 = new Product(
+    1,
+    'Apples',
+    2.99,
+    'Mild, aromatic, classically sweet and almost caramelized in flavor'
+  );
+  product2 = new Product(
+    2,
+    'Tomatoes',
+    1.99,
+    'Mild, aromatic, classically sweet and almost caramelized in flavor'
+  );
+  product3 = new Product(
+    3,
+    'Black Tea',
+    3.99,
+    'Mild, aromatic, classically sweet and almost caramelized in flavor'
+  );
+  product4 = new Product(
+    4,
+    'Pasta',
+    2.99,
+    'Mild, aromatic, classically sweet and almost caramelized in flavor'
+  );
+  product5 = new Product(
+    5,
+    'Sugar',
+    1.99,
+    'Mild, aromatic, classically sweet and almost caramelized in flavor'
+  );
+
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
 
@@ -74,6 +106,12 @@ export class AppComponent implements OnInit {
     console.log('Employee 2:', this.employee2);
 
     this.customer2.getName();
+
+    console.log('Product 1:', this.product1);
+    console.log('Product 2:', this.product2);
+    console.log('Product 3:', this.product3);
+    console.log('Product 4:', this.product4);
+    console.log('Product 5:', this.product5);
   }
 
   printCandidates(candidates: Candidate[]): string {
