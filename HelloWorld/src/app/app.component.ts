@@ -13,7 +13,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
+
     const candidates: Candidate[] = [this.candidate1, this.candidate2];
     console.log(candidates);
+
+    const printCandidates = this.printCandidates(candidates);
+    console.log(printCandidates);
+  }
+
+  printCandidates(candidates: Candidate[]): string {
+    return candidates
+      .map((candidate) => `${candidate.getFullName()}: ${candidate.birthday}`)
+      .join('; ');
   }
 }

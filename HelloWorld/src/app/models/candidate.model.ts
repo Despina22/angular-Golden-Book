@@ -8,4 +8,8 @@ export class Candidate {
     this.lastName = lastName;
     this.birthday = birthday;
   }
+
+  getFullName(): string {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
