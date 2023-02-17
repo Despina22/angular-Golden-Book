@@ -8,6 +8,7 @@ import { User } from './models/base/user.model';
 import { BaseEntity } from './models/base/baseEntity.model';
 import { Post } from './models/base/post.model';
 import { Book } from './models/base/book.model';
+import { Job } from './models/base/job.model';
 
 @Component({
   selector: 'app-root',
@@ -216,6 +217,25 @@ export class AppComponent implements OnInit {
     };
     console.log('Book 1:', book1);
     console.log('Book 2:', book2);
+
+    const job1: Job = {
+      id: 1,
+      title: 'Sales Manager',
+      description:
+        'A Sales Manager , or Sales Department Manager, is responsible for overseeing daily operations in the sales department. Their duties include hiring...',
+      workHours: 40,
+      pricePerHour: 14,
+    };
+    const job2: Job = {
+      id: 2,
+      title: 'Architect',
+      description:
+        'Architect Job Responsibilities:Researches, programs, plans, designs, and administers building projects for clients, applying knowledge of architectural design, construction detailing, construction procedures',
+      workHours: 40,
+      pricePerHour: 16,
+    };
+    console.log('Job 1:', job1);
+    console.log('Job 2:', job2);
   }
 
   printCandidates(candidates: Candidate[]): string {
