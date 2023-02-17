@@ -35,6 +35,13 @@ export class AppComponent implements OnInit {
     '120 - 466 - 652',
     'Redmond, WA 78214'
   );
+  customer2 = new Customer(
+    1,
+    'John',
+    'john456@gmail.com',
+    '120 - 255 - 352',
+    'Redmond, WA 78214'
+  );
 
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
@@ -47,6 +54,8 @@ export class AppComponent implements OnInit {
 
     console.log('Employee 1:', this.employee1);
     console.log('Employee 2:', this.employee2);
+
+    this.customer2.getName();
   }
 
   printCandidates(candidates: Candidate[]): string {
