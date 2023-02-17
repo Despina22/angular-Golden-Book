@@ -1,7 +1,5 @@
-export interface Post {
-  id: number;
-  title: string;
-  description: string;
-  dateCreated: Date;
+import { BaseEntityForPostBookAndJob } from './baseEntity1.model';
+
+export interface Post extends BaseEntityForPostBookAndJob {
   numberOfLikes: number;
 }

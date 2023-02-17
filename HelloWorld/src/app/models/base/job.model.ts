@@ -1,7 +1,6 @@
-export interface Job {
-  id: number;
-  title: string;
-  description: string;
+import { BaseEntityForPostBookAndJob } from './baseEntity1.model';
+
+export interface Job extends BaseEntityForPostBookAndJob {
   workHours: number;
   pricePerHour: number;
 }
