@@ -126,10 +126,14 @@
   </div>
 
   <div>{{ customer1.customerInfo() }}</div>
-
-  <p>{{dateFormat1}}</p>
-  <p>{{dateFormat2}}</p>
-  <p>{{dateFormat3}}</p>
+  <hr />
+  <p>{{ dateFormat1 }}</p>
+  <p>{{ dateFormat2 }}</p>
+  <p>{{ dateFormat3 }}</p>
+  <hr />
+  <pre>{{ calculate(5, 10) | json }}</pre>
+  <pre>{{ calculate(10, 20) | json }}</pre>
+  <pre>{{ calculate(20, 30) | json }}</pre>
 
   <!-- Resources -->
   <h2>Resources</h2>

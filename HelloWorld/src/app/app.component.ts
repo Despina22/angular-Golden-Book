@@ -1,3 +1,4 @@
+import { SumResult } from './types/sumResult.model';
 import { DateFormats } from './enums/dateFormats.enum';
 import { Product } from './models/product.model';
 import { Address } from './models/address.model';
@@ -262,5 +263,10 @@ export class AppComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  calculate(a: number, b: number): SumResult {
+    const sum = a + b;
+    return { a, b, sum };
   }
 }
