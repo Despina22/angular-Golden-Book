@@ -218,24 +218,22 @@ export class AppComponent implements OnInit {
     console.log('Book 1:', book1);
     console.log('Book 2:', book2);
 
-    const job1: Job = {
-      id: 1,
-      title: 'Sales Manager',
-      description:
-        'A Sales Manager , or Sales Department Manager, is responsible for overseeing daily operations in the sales department. Their duties include hiring...',
-      workHours: 40,
-      pricePerHour: 14,
-    };
-    const job2: Job = {
-      id: 2,
-      title: 'Architect',
-      description:
-        'Architect Job Responsibilities:Researches, programs, plans, designs, and administers building projects for clients, applying knowledge of architectural design, construction detailing, construction procedures',
-      workHours: 40,
-      pricePerHour: 16,
-    };
-    console.log('Job 1:', job1);
-    console.log('Job 2:', job2);
+    const job1 = new Job(
+      1,
+      'Sales Manager',
+      'A Sales Manager , or Sales Department Manager, is responsible for overseeing daily operations in the sales department. Their duties include hiring...',
+      40,
+      14
+    );
+    const job2 = new Job(
+      2,
+      'Architect',
+      'Architect Job Responsibilities:Researches, programs, plans, designs, and administers building projects for clients, applying knowledge of architectural design, construction detailing, construction procedures',
+      40,
+      16
+    );
+    console.log('Job 1 Salary', job1.getSalary());
+    console.log('Job 2 Salary', job2.getSalary());
   }
 
   printCandidates(candidates: Candidate[]): string {
