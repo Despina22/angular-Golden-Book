@@ -11,6 +11,7 @@ import { BaseEntity } from './models/base/baseEntity.model';
 import { Post } from './models/base/post.model';
 import { Book } from './models/base/book.model';
 import { Job } from './models/base/job.model';
+import { ApiResponse } from './models/apiResponse.model';
 
 @Component({
   selector: 'app-root',
@@ -240,6 +241,18 @@ export class AppComponent implements OnInit {
     );
     console.log('Job 1 Salary', job1.getSalary());
     console.log('Job 2 Salary', job2.getSalary());
+
+    const jobs: Job[] = [job1, job2];
+    const apiResponse1 = new ApiResponse<Job>(jobs, 2, 3, 4);
+    console.log(apiResponse1);
+
+    const books: Book[] = [book1, book2];
+    const apiResponse2 = new ApiResponse<Book>(books, 50, 2, 25);
+    console.log(apiResponse2);
+
+    const posts: Post[] = [post1, post2];
+    const apiResponse3 = new ApiResponse<Post>(posts, 10, 1, 5);
+    console.log(apiResponse3);
   }
 
   printCandidates(candidates: Candidate[]): string {
