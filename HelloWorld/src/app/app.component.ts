@@ -1,3 +1,4 @@
+import { DateFormats } from './enums/dateFormats.enum';
 import { Product } from './models/product.model';
 import { Address } from './models/address.model';
 import { Customer } from './models/customer.model';
@@ -135,6 +136,10 @@ export class AppComponent implements OnInit {
     'classically sweet and almost caramelized in flavor'
   );
 
+  dateFormat1 = this.formatDate(new Date(), DateFormats.YYYYMMDD);
+  dateFormat2 = this.formatDate(new Date(), DateFormats.DDMMYYYY);
+  dateFormat3 = this.formatDate(new Date(), DateFormats.MMDDYYYY);
+
   ngOnInit(): void {
     console.log(this.candidate1, this.candidate2);
 
@@ -240,5 +245,22 @@ export class AppComponent implements OnInit {
     return candidates
       .map((candidate) => `${candidate.getFullName()}: ${candidate.birthday}`)
       .join('; ');
+  }
+
+  formatDate(date: Date, format: DateFormats): string {
+    let year = date.getFullYear().toString();
+    let month = (date.getMonth() + 1).toString().padStart(2, '0');
+    let day = date.getDate().toString().padStart(2, '0');
+
+    switch (format) {
+      case DateFormats.YYYYMMDD:
+        return `${year}-${month}-${day}`;
+      case DateFormats.DDMMYYYY:
+        return `${day}/${month}/${year}`;
+      case DateFormats.MMDDYYYY:
+        return `${month}-${day} ${year}`;
+      default:
+        return '';
+    }
   }
 }
