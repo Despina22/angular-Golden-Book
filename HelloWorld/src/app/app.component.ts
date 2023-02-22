@@ -239,8 +239,8 @@ export class AppComponent implements OnInit {
       40,
       16
     );
-    console.log('Job 1 Salary', job1.getSalary());
-    console.log('Job 2 Salary', job2.getSalary());
+    console.log('Job 1 Salary', job1.salary);
+    console.log('Job 2 Salary', job2.salary);
 
     const jobs: Job[] = [job1, job2];
     const apiResponse1 = new ApiResponse<Job>(jobs, 2, 3, 4);
