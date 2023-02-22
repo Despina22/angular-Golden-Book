@@ -1,4 +1,4 @@
-import { BaseEntity } from './baseEntity.model';
+import { BaseEntity } from './base-entity.model';
 
 export class User implements BaseEntity {
   readonly id: number;

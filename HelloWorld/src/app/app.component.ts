@@ -1,5 +1,5 @@
-import { SumResult } from './types/sumResult.model';
-import { DateFormats } from './enums/dateFormats.enum';
+import { SumResult } from './types/sum-result.model';
+import { DateFormats } from './enums/date-formats.enum';
 import { Product } from './models/product.model';
 import { Address } from './models/address.model';
 import { Customer } from './models/customer.model';
@@ -7,7 +7,7 @@ import { Employee } from './models/employee.model';
 import { Component, OnInit } from '@angular/core';
 import { Candidate } from './models/candidate.model';
 import { User } from './models/base/user.model';
-import { BaseEntity } from './models/base/baseEntity.model';
+import { BaseEntity } from './models/base/base-entity.model';
 import { Post } from './models/base/post.model';
 import { Book } from './models/base/book.model';
 import { Job } from './models/base/job.model';

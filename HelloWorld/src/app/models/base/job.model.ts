@@ -1,4 +1,4 @@
-import { BaseEntityForPostBookAndJob } from './baseEntity1.model';
+import { BaseEntityForPostBookAndJob } from './base-entity1.model';
 
 export class Job implements BaseEntityForPostBookAndJob {
   id: number;
