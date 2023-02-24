@@ -1,0 +1,40 @@
+@import "../../../../styles/variables.scss";
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .menu-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+
+    .icon {
+      width: 28px;
+      height: 5px;
+      border: none;
+      border-radius: 3px;
+      background-color: $icon-background-color;
+      margin: 4px 30px;
+    }
+  }
+
+  .main-heading {
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: $font-color;
+  }
+}
+
+.fa-user {
+  color: $icon-color;
+  font-size: 20px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background-color: $font-color;
+  margin-right: 60px;
+}
