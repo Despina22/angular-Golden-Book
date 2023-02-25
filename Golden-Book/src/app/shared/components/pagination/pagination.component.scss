@@ -1,0 +1,27 @@
+@import "../../../../styles/variables.scss";
+
+mat-paginator {
+  background-color: transparent;
+  color: $font-color;
+  width: 85%;
+  position: absolute;
+  top: 84%;
+  right: 8%;
+}
+::ng-deep {
+  .mat-select-min-line {
+    color: $font-color;
+  }
+  .mat-select-arrow {
+    color: $font-color;
+  }
+
+  .mat-paginator-icon {
+    path {
+      color: $font-color;
+    }
+  }
+  .mat-form-field-flex {
+    border-bottom: 1px solid $font-color;
+  }
+}
