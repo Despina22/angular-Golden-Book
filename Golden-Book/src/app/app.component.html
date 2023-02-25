@@ -1,4 +1,21 @@
 <div class="wrapper">
   <app-header></app-header>
+
+  <div class="main-panel">
+    <app-heading></app-heading>
+    <div class="forms">
+      <app-search></app-search>
+      <app-filter></app-filter>
+    </div>
+    <div class="main-content">
+      <app-single-book [book]="book1"></app-single-book>
+      <app-single-book [book]="book2"></app-single-book>
+      <app-single-book [book]="book3"></app-single-book>
+      <app-single-book [book]="book4"></app-single-book>
+      <app-single-book [book]="book5"></app-single-book>
+      <app-single-book [book]="book6"></app-single-book>
+    </div>
+  </div>
+
   <app-footer></app-footer>
 </div>

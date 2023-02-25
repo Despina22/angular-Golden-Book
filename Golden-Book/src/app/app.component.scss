@@ -9,4 +9,31 @@
     0px -80px 30px -20px $shadow-color inset;
   height: 100vh;
   position: relative;
+
+  .main-panel {
+    width: 90vw;
+    margin: auto;
+
+    .forms {
+      width: 85vw;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 20%;
+      left: 7%;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: auto;
+      border: transparent;
+      height: 57vh;
+      width: 85vw;
+      position: absolute;
+      top: 30%;
+      left: 7%;
+    }
+  }
 }

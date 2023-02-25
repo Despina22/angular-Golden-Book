@@ -1,0 +1,29 @@
+@import "../styles/variables.scss";
+
+.form-input {
+  input {
+    width: 40vw;
+    font-size: 17px;
+    padding: 10px;
+    background-color: $font-color;
+    border-radius: 3px;
+    border: none;
+    margin: 15px 0px;
+  }
+
+  .fa-search {
+    font-size: 22px;
+    position: absolute;
+    top: 17px;
+    left: 44%;
+    transform: translateY(7px);
+  }
+
+  .fa-chevron-down {
+    font-size: 22px;
+    position: absolute;
+    top: 20px;
+    right: 1%;
+    transform: translateY(4px);
+  }
+}
