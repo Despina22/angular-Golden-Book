@@ -7,6 +7,7 @@ import { SingleBookComponent } from './components/single-book/single-book.compon
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SingleBookComponent,
     PaginationComponent,
   ],
-  imports: [CommonModule, BrowserAnimationsModule, MatPaginatorModule],
+  imports: [
+    CommonModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    FormsModule,
+  ],
   exports: [
     HeadingComponent,
     SearchComponent,

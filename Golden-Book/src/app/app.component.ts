@@ -1,12 +1,12 @@
 import { SingleBook } from './shared/components/single-book/single-book.model';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Golden-Book';
 
   book1: SingleBook = {
@@ -69,4 +69,10 @@ export class AppComponent {
     url: 'https://m.media-amazon.com/images/I/51Teei26k+L._SX419_BO1,204,203,200_.jpg',
     publishedDate: 2006,
   };
+
+  ngOnInit(): void {}
+
+  onSearch(searchValue: string) {
+    alert(`Search Value: ${searchValue}`);
+  }
 }
