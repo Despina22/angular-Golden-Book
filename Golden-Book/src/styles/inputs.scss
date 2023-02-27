@@ -27,10 +27,40 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 
   .fa-chevron-down {
-    font-size: 22px;
+    font-size: 20px;
     position: absolute;
-    top: 20px;
-    right: 1%;
-    transform: translateY(4px);
+    bottom: 0px;
+    right: 3%;
+    transform: translateY(12px);
+  }
+}
+
+:host ::ng-deep {
+  .mat-form-field-wrapper {
+    width: 40vw;
+    padding: 5px 10px;
+    background-color: $font-color;
+    border-radius: 3px;
+    border: none;
+    margin: 15px 0px;
+    min-height: 43.5px;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0px;
+  }
+}
+
+::ng-deep {
+  .ng-tns-c75-0 {
+    border-top: 0px solid transparent;
+  }
+  .mat-form-field-underline {
+    display: none;
+  }
+  .mat-select-placeholder {
+    font-size: 0px;
+  }
+  .mat-select-arrow-wrapper .ng-tns-c78-1 {
+    opacity: 0;
   }
 }

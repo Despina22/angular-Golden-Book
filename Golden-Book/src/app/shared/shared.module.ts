@@ -1,3 +1,6 @@
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeadingComponent } from './components/heading/heading.component';
@@ -22,6 +25,9 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatPaginatorModule,
     FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCheckboxModule,
   ],
   exports: [
     HeadingComponent,

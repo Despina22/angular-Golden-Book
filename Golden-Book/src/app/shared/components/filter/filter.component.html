@@ -1,10 +1,14 @@
-<div class="form-input">
-  <label for="filter"></label>
-  <input
-    id="filter"
-    type="text"
-    name="filter"
-    placeholder="Filter by Category"
-  />
-  <span class="fa fa-chevron-down"> </span>
-</div>
+<mat-form-field class="form-input" [floatLabel]="'never'">
+  <mat-label>Filter by Category</mat-label>
+  <mat-select
+    [(ngModel)]="selectedCategory"
+    (selectionChange)="selected()"
+    multiple
+  >
+    <mat-option value="literary">Literary</mat-option>
+    <mat-option value="history">History </mat-option>
+    <mat-option value="children's action">Children's Action </mat-option>
+    <mat-option value="psychology">Psychology </mat-option>
+  </mat-select>
+  <i matSuffix class="fa fa-chevron-down"></i>
+</mat-form-field>
