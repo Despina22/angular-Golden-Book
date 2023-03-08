@@ -1,11 +1,5 @@
-<div class="form-input">
-  <label for="search"></label>
-  <input
-    [(ngModel)]="searchValue"
-    type="search"
-    name="search"
-    id="search"
-    placeholder="Search by Book Name"
-  />
-  <span class="fa fa-search" (click)="search()"></span>
-</div>
+<mat-form-field class="form-input" [floatLabel]="'never'">
+  <mat-label class="text-label">Search by Book Name</mat-label>
+  <input type="search" matInput name="search" [(ngModel)]="searchValue" />
+  <mat-icon (click)="search()">search</mat-icon>
+</mat-form-field>

@@ -11,6 +11,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
   ],
   exports: [
     HeadingComponent,

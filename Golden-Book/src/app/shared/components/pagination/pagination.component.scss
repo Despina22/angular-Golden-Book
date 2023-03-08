@@ -1,16 +1,19 @@
 @import "../../../../styles/variables.scss";
 
-mat-paginator {
-  background-color: transparent;
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 85vw;
+  transform: translate(30px, -20px);
+  margin-top: 10px;
   color: $font-color;
-  width: 85%;
-  position: absolute;
-  top: 84%;
-  right: 8%;
+  background-color: transparent;
+  padding: 0px;
 }
-::ng-deep {
+
+:host ::ng-deep {
   .mat-select-min-line {
-    color: $placeholder-color;
+    color: $font-color;
   }
   .mat-select-arrow {
     color: $font-color;
@@ -21,7 +24,14 @@ mat-paginator {
       color: $font-color;
     }
   }
-  .mat-form-field-flex {
-    border-bottom: 1px solid $font-color;
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: $font-color;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pagination {
+    width: 400px;
   }
 }

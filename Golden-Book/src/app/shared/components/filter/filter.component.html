@@ -1,5 +1,5 @@
 <mat-form-field class="form-input" [floatLabel]="'never'">
-  <mat-label>Filter by Category</mat-label>
+  <mat-label class="text-label">Filter by Category</mat-label>
   <mat-select
     [(ngModel)]="selectedCategory"
     (selectionChange)="selected()"
@@ -10,5 +10,5 @@
     <mat-option value="children's action">Children's Action </mat-option>
     <mat-option value="psychology">Psychology </mat-option>
   </mat-select>
-  <i matSuffix class="fa fa-chevron-down"></i>
+  <mat-icon>keyboard_arrow_down</mat-icon>
 </mat-form-field>

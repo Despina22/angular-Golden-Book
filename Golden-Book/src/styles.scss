@@ -6,3 +6,13 @@
   box-sizing: border-box;
   font-family: $font-family-sans-serif;
 }
+
+body {
+  background: no-repeat url("./assets/images/golden-book-image.png"),
+    $primary-color;
+  background-position: left 15% bottom 40%, center;
+  background-size: 580px 580px, contain;
+  height: 100%;
+  max-width: 100%;
+  position: relative;
+}
