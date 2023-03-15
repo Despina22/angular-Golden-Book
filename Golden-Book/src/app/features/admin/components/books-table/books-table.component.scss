@@ -4,15 +4,16 @@
   .heading {
     width: 80vw;
     color: $font-color;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 
   .book-overview-content-table {
     width: 80vw;
+
     background-color: $books-background-color;
     border-radius: 3px;
     padding: 10px;
-    margin: auto;
+    margin: 0px auto 30px;
 
     mat-cell,
     mat-header-cell,
@@ -46,7 +47,7 @@
 
     .review-description {
       width: 280px;
-      height: 70px;
+      height: 60px;
       overflow: hidden;
     }
 
@@ -57,7 +58,7 @@
     }
 
     .table-row {
-      height: 90px;
+      height: 70px;
     }
   }
 }

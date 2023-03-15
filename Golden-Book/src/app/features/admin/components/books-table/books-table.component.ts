@@ -9,7 +9,7 @@ const books: Book[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?',
     category: 'Literary',
-    url: 'http://az837918.vo.msecnd.net/publishedimages/articles/1733/en-CA/images/1/free-download-this-stunning-alberta-scene-for-your-device-background-image-L-6.jpg',
+    url: 'https://images-na.ssl-images-amazon.com/images/I/51HbNW6RzhL._SX375_BO1,204,203,200_.jpg',
     publishedDate: 1983,
     country: 'USA',
     isbn: '1236547896',
@@ -67,6 +67,20 @@ const books: Book[] = [
     category: "Children's Action",
     url: 'https://m.media-amazon.com/images/I/51bZujlJxlL._SX422_BO1,204,203,200_.jpg',
     publishedDate: 2022,
+    country: 'USA',
+    isbn: '1236547896',
+    authorDescription:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?',
+  },
+  {
+    id: 6,
+    title: 'Harry Potter: A Magical Year',
+    author: 'J. K. Rowling',
+    description:
+      'This irresistible gift book takes readers on an unforgettable journey through the seasons at Hogwarts. Jim Kay’s captivating illustrations, paired with much-loved quotations from J.K. Rowling’s Harry Potter novels -- one moment, anniversary, or memory for every day of the year -- bring to life all of the magic, beauty, and wonder of the wizarding world.  Jim Kay has been enchanting readers since the publication of the Illustrated Edition of Harry Potter and the Sorcerer’s Stone in 2015. Now, in Harry Potter: A Magical Year, a selection of Kay’s most iconic illustrations are joined by previously unseen pencil sketches and preparatory pieces, offering unique and fascinating insight into the artist’s sketchbook.  From the snowy towers of Hogwarts, to the dancing eyes of Professor Albus Dumbledore, to the hustle and bustle of Diagon Alley, this visual feast is the perfect companion for readers of all ages, at any point on their Harry Potter journey, and a gift to cherish for years to come.',
+    category: "Children's Action",
+    url: 'https://m.media-amazon.com/images/I/51Teei26k+L._SX419_BO1,204,203,200_.jpg',
+    publishedDate: 2006,
     country: 'USA',
     isbn: '1236547896',
     authorDescription:
