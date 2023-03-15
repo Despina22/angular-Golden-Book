@@ -1,0 +1,11 @@
+<div class="main-panel">
+  <h2 class="heading">Homepage</h2>
+  <div class="forms">
+    <app-search></app-search>
+    <app-filter class="filter"></app-filter>
+  </div>
+  <div class="books-wrapper">
+    <app-single-book *ngFor="let book of books" [book]="book"></app-single-book>
+  </div>
+  <app-pagination></app-pagination>
+</div>

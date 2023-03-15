@@ -1,26 +1,23 @@
 @import "../../../../styles/variables.scss";
 
 .header {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: linear-gradient(rgb(227, 217, 204), rgba(22, 15, 9));
 
-  .menu-logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px;
+  .example-spacer {
+    flex: 1 1 auto;
+  }
 
-    .icon {
-      width: 28px;
-      height: 5px;
-      border: none;
-      border-radius: 3px;
-      background-color: $icon-background-color;
-      margin: 4px 30px;
-    }
+  .icon {
+    border: none;
+    background-color: transparent;
+    color: $font-color;
+    margin: 0px 30px 0px 10px;
+  }
+
+  .menu-icon {
+    font-size: 37px;
+    display: flex;
+    align-items: center;
   }
 
   .main-heading {
@@ -29,29 +26,29 @@
     letter-spacing: 0.2px;
     color: $font-color;
   }
+
+  .user {
+    color: $icon-color;
+    border-radius: 3px;
+    border: none;
+    background-color: $font-color;
+    margin-right: 10px;
+  }
 }
 
-.fa-user {
-  color: $icon-color;
-  font-size: 20px;
-  padding: 6px 8px;
-  border-radius: 4px;
-  background-color: $font-color;
-  margin-right: 60px;
+:host ::ng-deep .mat-icon-button {
+  width: 32px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
 }
 
 @media (max-width: 575.98px) {
   .header {
     .main-heading {
       font-size: 25px;
-    }
-
-    .menu-logo {
-      .icon {
-        width: 24px;
-        height: 4px;
-        margin: 4px 15px;
-      }
     }
   }
 }

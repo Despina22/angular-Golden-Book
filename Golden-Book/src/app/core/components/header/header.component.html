@@ -1,15 +1,20 @@
-<header class="header">
-  <div class="menu-logo">
-    <div class="menu-bar">
-      <div>
-        <div class="icon"></div>
-        <div class="icon"></div>
-        <div class="icon"></div>
-      </div>
-    </div>
-    <h2 class="main-heading">Golden Book.</h2>
-  </div>
-  <div class="users-elements">
-    <i class="fa fa-user"></i>
-  </div>
-</header>
+<mat-toolbar class="header">
+  <button
+    mat-icon-button
+    class="icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="onToggleSidebar()"
+  >
+    <mat-icon class="menu-icon">menu</mat-icon>
+  </button>
+  <h2 class="main-heading">Golden Book.</h2>
+  <span class="example-spacer"></span>
+
+  <button
+    mat-icon-button
+    class="user"
+    aria-label="Example icon-button with person icon"
+  >
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>

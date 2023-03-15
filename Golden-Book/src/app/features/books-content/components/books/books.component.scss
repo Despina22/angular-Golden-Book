@@ -1,9 +1,18 @@
+@import "../../../../../styles/variables.scss";
+
 .main-panel {
-  max-width: 90vw;
+  max-width: 85vw;
   margin: auto;
 
+  .heading {
+    color: $font-color;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 15px 0px 0px 30px;
+  }
+
   .forms {
-    max-width: 85vw;
+    max-width: 80vw;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -15,13 +24,23 @@
       align-items: center;
     }
   }
+
+  .books-wrapper {
+    max-width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 30px;
+    border: transparent;
+  }
 }
 
 @media (max-width: 575.98px) {
   .forms {
     margin-left: 0;
   }
-  .main-content {
+  .books-wrapper {
     margin-left: 0;
   }
 }
@@ -30,7 +49,7 @@
   .forms {
     margin-left: 15px;
   }
-  .main-content {
+  .books-wrapper {
     margin-left: 15px;
   }
 }
@@ -39,7 +58,7 @@
   .forms {
     margin-left: 30px;
   }
-  .main-content {
+  .books-wrapper {
     margin-left: 30px;
   }
 }
@@ -48,7 +67,7 @@
   .forms {
     margin-left: 50px;
   }
-  .main-content {
+  .books-wrapper {
     margin-left: 50px;
   }
 }
@@ -57,7 +76,7 @@
   .forms {
     margin-left: 80px;
   }
-  .main-content {
+  .books-wrapper {
     margin-left: 80px;
   }
 }

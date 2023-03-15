@@ -1,0 +1,31 @@
+<mat-card class="book-content">
+  <mat-card-header class="book-title">
+    <mat-card-title class="book-heading" [title]="book.title">{{
+      book.title.length > 100
+        ? book.title.substring(0, 100) + "..."
+        : book.title
+    }}</mat-card-title>
+  </mat-card-header>
+  <div class="all-description">
+    <mat-card-content class="card-content">
+      <img [src]="book.url" [alt]="book.title" class="img" />
+    </mat-card-content>
+    <div class="description">
+      <h4 class="author">{{ book.author }}, {{ book.publishedDate }}</h4>
+      <p class="book-category">
+        Category:
+        {{
+          book.category.length > 100
+            ? book.category.substring(0, 100) + "..."
+            : book.category
+        }}
+      </p>
+      <p class="book-description">{{ book.description }}</p>
+      <mat-card-actions class="card-actions">
+        <button class="book-btn" routerLink="/book/{{ book.id }}">
+          Book Overview
+        </button>
+      </mat-card-actions>
+    </div>
+  </div>
+</mat-card>

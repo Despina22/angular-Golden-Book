@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Book } from './single-book.model';
+import { Book } from 'src/app/features/models/single-book.model';
 
 @Component({
   selector: 'app-single-book',
@@ -7,7 +7,7 @@ import { Book } from './single-book.model';
   styleUrls: ['./single-book.component.scss'],
 })
 export class SingleBookComponent implements OnInit {
-  @Input() books: Book[];
+  @Input() book: Book;
   constructor() {}
 
   ngOnInit(): void {}

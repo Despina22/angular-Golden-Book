@@ -1,0 +1,91 @@
+<div class="heading">
+  <h4>Admin / Books</h4>
+  <h1>Books</h1>
+</div>
+
+<mat-table [dataSource]="dataSource" class="book-overview-content-table">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef class="id-container"></mat-header-cell>
+    <mat-cell *matCellDef class="id-container">
+      <mat-icon>more_vert</mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef class="img-container"
+      >Image</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="img-container">
+      <img [src]="book.url" class="book-table-img" />
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef class="title-container"
+      >Title</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="title-container">{{
+      book.title
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="author">
+    <mat-header-cell *matHeaderCellDef class="author-container"
+      >Author</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="author-container">{{
+      book.author
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="publishedDate">
+    <mat-header-cell *matHeaderCellDef class="year-container"
+      >Year</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="year-container">{{
+      book.publishedDate
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="category">
+    <mat-header-cell *matHeaderCellDef class="category-container"
+      >Category</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="category-container">{{
+      book.category
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef class="description-container"
+      >Description</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="description-container">
+      <a href="">Read more</a>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="isbn">
+    <mat-header-cell *matHeaderCellDef class="isbn-container"
+      >ISBN</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="isbn-container">{{
+      book.isbn
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="authorDescription">
+    <mat-header-cell *matHeaderCellDef class="review-description"
+      >Reviewer / Review</mat-header-cell
+    >
+    <mat-cell *matCellDef="let book" class="review-description">
+      {{ book.authorDescription }}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    class="table-row"
+  ></mat-row>
+</mat-table>

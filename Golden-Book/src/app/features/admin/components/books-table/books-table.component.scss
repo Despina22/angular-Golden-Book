@@ -1,0 +1,63 @@
+@import "../../../../../styles/variables.scss";
+
+:host {
+  .heading {
+    width: 80vw;
+    color: $font-color;
+    margin: 20px auto;
+  }
+
+  .book-overview-content-table {
+    width: 80vw;
+    background-color: $books-background-color;
+    border-radius: 3px;
+    padding: 10px;
+    margin: auto;
+
+    mat-cell,
+    mat-header-cell,
+    mat-footer-cell {
+      ::ng-deep {
+        flex: none;
+        padding-left: 0px;
+      }
+    }
+
+    mat-row,
+    mat-header-row,
+    mat-footer-row {
+      height: 50px;
+    }
+
+    .id-container {
+      width: 30px;
+    }
+    .img-container,
+    .year-container {
+      width: 70px;
+    }
+    .title-container,
+    .author-container,
+    .category-container,
+    .description-container,
+    .isbn-container {
+      width: 150px;
+    }
+
+    .review-description {
+      width: 280px;
+      height: 70px;
+      overflow: hidden;
+    }
+
+    .book-table-img {
+      width: 40px;
+      height: 60px;
+      border-radius: 3px;
+    }
+
+    .table-row {
+      height: 90px;
+    }
+  }
+}

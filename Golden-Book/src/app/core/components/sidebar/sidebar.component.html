@@ -1,0 +1,52 @@
+<app-header (toggleSidebar)="sidebar.toggle()"></app-header>
+
+<mat-drawer-container class="sidebar-container">
+  <mat-drawer #sidebar class="app-sidebar" mode="side">
+    <mat-nav-list>
+      <mat-list-item
+        class="nav-list"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon>home</mat-icon><span>HOMEPAGE</span>
+      </mat-list-item>
+
+      <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-icon>list</mat-icon><span>CATEGORIES</span>
+        </mat-expansion-panel-header>
+        <mat-nav-list class="nav-list-items">
+          <a mat-list-item>Literary</a>
+          <a mat-list-item>History</a>
+          <a mat-list-item>Children's Action</a>
+          <a mat-list-item>Psychology</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header
+          routerLink="admin"
+          routerLinkActive="active"
+        >
+          <mat-icon>verified_user</mat-icon><span>ADMIN</span>
+        </mat-expansion-panel-header>
+        <mat-nav-list class="nav-list-items">
+          <a
+            mat-list-item
+            routerLink="admin/books"
+            routerLinkActive="active-item"
+            >Books</a
+          >
+          <a mat-list-item>Categories</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="app-sidebar-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -3,7 +3,7 @@
 .pagination {
   display: flex;
   justify-content: flex-end;
-  max-width: 85vw;
+  max-width: 80vw;
   transform: translate(30px, -20px);
   margin-top: 10px;
   color: $font-color;
@@ -19,12 +19,6 @@
     color: $font-color;
   }
 
-  .mat-paginator-icon {
-    path {
-      color: $font-color;
-    }
-  }
-
   .mat-form-field-appearance-legacy .mat-form-field-underline {
     background-color: $font-color;
   }
@@ -32,6 +26,6 @@
 
 @media (max-width: 575.98px) {
   .pagination {
-    width: 400px;
+    width: 200px;
   }
 }

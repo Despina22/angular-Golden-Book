@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from 'src/app/shared/components/single-book/single-book.model';
+import { Book } from 'src/app/features/models/single-book.model';
 
 @Component({
   selector: 'app-books',
@@ -73,8 +73,4 @@ export class BooksComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  onSearch(searchValue: string) {
-    alert(`Search Value: ${searchValue}`);
-  }
 }
