@@ -8,17 +8,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { FeaturesModule } from '../features/features.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, PageNotFoundComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     CommonModule,
-    FeaturesModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,

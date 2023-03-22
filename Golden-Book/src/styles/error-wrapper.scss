@@ -1,6 +1,4 @@
-@import "../../../../styles/variables.scss";
-
-.wrapper {
+@mixin error-wrapper {
   max-width: 85vw;
   color: $font-color;
   margin: auto;

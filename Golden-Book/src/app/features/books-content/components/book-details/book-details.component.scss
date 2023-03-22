@@ -1,4 +1,5 @@
 @import "../../../../../styles/variables.scss";
+@import "../../../../../styles/error-wrapper.scss";
 
 :host {
   .wrapper {
@@ -6,7 +7,7 @@
     margin: auto;
 
     .main-heading-container {
-      width: 75vw;
+      max-width: 60vw;
       margin: auto;
 
       .main-heading {
@@ -18,17 +19,21 @@
     }
 
     .book-overview-content {
-      max-width: 75vw;
+      max-width: 60vw;
       background-color: $books-background-color;
       border-radius: 3px;
       padding: 20px;
       margin: auto;
+      overflow: hidden;
 
       .book-overview-heading {
-        width: 300px;
-        font-size: 22px;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 20px;
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         cursor: default;
       }
 
@@ -43,22 +48,22 @@
         justify-content: space-between;
 
         .book-overview-img {
-          width: 240px;
-          height: 360px;
+          max-width: 240px;
+          min-height: 360px;
           border-radius: 3px;
           margin-right: 30px;
         }
 
         .book-overview-text {
           font-size: 16px;
-          margin: 0px 15px 15px;
+          margin: 0px 15px 12px;
         }
 
         .book-overview-description {
           height: 90px;
           font-size: 16px;
           overflow: hidden;
-          margin: 15px;
+          margin: 10px 15px;
         }
 
         .book-overview-author-description {
@@ -71,7 +76,7 @@
     }
 
     .close-btn-wrapper {
-      max-width: 75vw;
+      max-width: 60vw;
       display: flex;
       justify-content: flex-end;
       flex-wrap: wrap;
@@ -79,13 +84,29 @@
     }
 
     .close-btn {
-      font-size: 20px;
+      font-size: 17px;
       background-color: $btn-background-color;
       color: $font-color;
-      padding: 12px 45px;
+      padding: 10px 40px;
       border-radius: 4px;
       margin: 10px 0;
       text-transform: uppercase;
+    }
+  }
+
+  .error-wrapper {
+    @include error-wrapper;
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    .all-description {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .all-description {
+      flex-wrap: wrap;
     }
   }
 }

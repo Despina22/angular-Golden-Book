@@ -5,7 +5,11 @@
     <app-filter class="filter"></app-filter>
   </div>
   <div class="books-wrapper">
-    <app-single-book *ngFor="let book of books" [book]="book"></app-single-book>
+    <app-book
+      *ngFor="let book of books"
+      [book]="book"
+      [appCategoryColor]="book.category"
+    ></app-book>
   </div>
   <app-pagination></app-pagination>
 </div>

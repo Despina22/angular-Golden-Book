@@ -1,13 +1,13 @@
 import { Book } from 'src/app/features/models/single-book.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-book-overview',
-  templateUrl: './book-overview.component.html',
-  styleUrls: ['./book-overview.component.scss'],
+  selector: 'app-book-details',
+  templateUrl: './book-details.component.html',
+  styleUrls: ['./book-details.component.scss'],
 })
-export class BookOverviewComponent implements OnInit {
+export class BookDetailsComponent implements OnInit {
   bookId: string;
   book: Book;
 

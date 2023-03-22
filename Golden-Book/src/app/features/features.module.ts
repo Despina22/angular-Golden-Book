@@ -1,15 +1,33 @@
+import { BookDetailsComponent } from './books-content/components/book-details/book-details.component';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BooksComponent } from './books-content/components/books/books.component';
 import { SharedModule } from '../shared/shared.module';
-import { SingleBookComponent } from './books-content/components/single-book/single-book.component';
+import { BookComponent } from './books-content/components/book/book.component';
 import { MatCardModule } from '@angular/material/card';
-import { BookOverviewComponent } from './book-overview/components/book-overview/book-overview.component';
+import { CategoryColorDirective } from './directives/category-color.directive';
 
 @NgModule({
-  declarations: [BooksComponent, SingleBookComponent, BookOverviewComponent],
-  imports: [CommonModule, SharedModule, MatCardModule, AppRoutingModule],
-  exports: [BooksComponent, SingleBookComponent, BookOverviewComponent],
+  declarations: [
+    BooksComponent,
+    BookComponent,
+    BookDetailsComponent,
+    CategoryColorDirective,
+  ],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MatCardModule,
+    AppRoutingModule,
+    MatIconModule,
+  ],
+  exports: [
+    BooksComponent,
+    BookComponent,
+    BookDetailsComponent,
+    CategoryColorDirective,
+  ],
 })
 export class FeaturesModule {}

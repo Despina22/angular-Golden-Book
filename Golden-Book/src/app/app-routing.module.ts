@@ -1,12 +1,13 @@
-import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { BooksComponent } from './features/books-content/components/books/books.component';
-import { BookOverviewComponent } from './features/book-overview/components/book-overview/book-overview.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { BookDetailsComponent } from './features/books-content/components/book-details/book-details.component';
 
 const appRouter: Routes = [
   { path: '', component: BooksComponent },
-  { path: 'book/:bookId', component: BookOverviewComponent },
+  { path: 'book/:bookId', component: BookDetailsComponent },
   {
     path: 'admin',
     loadChildren: () =>

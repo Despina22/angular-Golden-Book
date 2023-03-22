@@ -1,8 +1,8 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="book">
   <div class="main-heading-container">
-    <h2 class="main-heading">Book-Overview - {{ book.title }}</h2>
+    <h2 class="main-heading">Book Overview - {{ book.title }}</h2>
   </div>
-  <mat-card class="book-overview-content">
+  <mat-card class="book-overview-content" [appCategoryColor]="book.category">
     <mat-card-header class="book-overview-title">
       <mat-card-title class="book-overview-heading">{{
         book.title
@@ -31,4 +31,9 @@
   <div class="close-btn-wrapper">
     <button class="close-btn" routerLink="/">Close</button>
   </div>
+</div>
+
+<div class="error-wrapper" *ngIf="!book">
+  <mat-icon>warning</mat-icon>
+  <p>Book is not found!!!</p>
 </div>

@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-:host {
+@mixin form-input {
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-results-button,
@@ -37,7 +37,7 @@
       padding-bottom: 0px;
 
       .mat-form-field-infix {
-        border-top: 0px solid transparent;
+        border-top: none;
       }
     }
 
@@ -46,7 +46,7 @@
     }
 
     .mat-select-arrow {
-      opacity: 0;
+      display: none;
     }
   }
 }
