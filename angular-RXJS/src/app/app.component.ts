@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable, fromEvent, map } from 'rxjs';
+import { Observable, combineLatest, fromEvent, map } from 'rxjs';
 import { debounceTime } from 'rxjs';
 
 @Component({
@@ -18,6 +18,10 @@ export class AppComponent implements OnInit {
 
   searchInput$?: Observable<string>;
 
+  input1$?: Observable<Event>;
+  input2$?: Observable<Event>;
+  result$?: Observable<[string, string]>;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -25,12 +29,23 @@ export class AppComponent implements OnInit {
 
     this.searchInput$ = fromEvent(
       document.getElementById('searchInput')!,
-      'input'
+      'keyup'
     ).pipe(
       debounceTime(500),
       map((event: Event) => (event.target as HTMLInputElement).value)
     );
 
     this.searchInput$.subscribe((value) => console.log(value));
+
+    this.input1$ = fromEvent(document.getElementById('input1')!, 'input');
+    this.input2$ = fromEvent(document.getElementById('input2')!, 'input');
+    this.result$ = combineLatest([this.input1$, this.input2$]).pipe(
+      map(([input1, input2]) => [
+        (input1.target as HTMLInputElement).value,
+        (input2.target as HTMLInputElement).value,
+      ])
+    );
+
+    this.result$.subscribe((value) => console.log(value));
   }
 }
