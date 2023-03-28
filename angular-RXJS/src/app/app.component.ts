@@ -32,6 +32,10 @@ export class AppComponent implements OnInit {
   data1$?: Observable<any>;
   data2$?: Observable<any>;
 
+  input3$?: Observable<number>;
+  input4$?: Observable<number>;
+  sum$?: Observable<number>;
+
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
@@ -64,5 +68,17 @@ export class AppComponent implements OnInit {
     forkJoin([this.data1$, this.data2$]).subscribe((results) =>
       console.log('Combined results:', results)
     );
+
+    this.input3$ = fromEvent(document.getElementById('input3')!, 'keyup').pipe(
+      map((event) => +(event.target as HTMLInputElement).value)
+    );
+    this.input4$ = fromEvent(document.getElementById('input4')!, 'keyup').pipe(
+      map((event) => +(event.target as HTMLInputElement).value)
+    );
+
+    this.sum$ = combineLatest([this.input3$, this.input4$]).pipe(
+      map(([input3, input4]) => input3 + input4)
+    );
+    this.sum$.subscribe((sum) => console.log(sum));
   }
 }
