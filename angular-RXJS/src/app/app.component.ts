@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {
   Observable,
+  Subscription,
   combineLatest,
   debounceTime,
   forkJoin,
   fromEvent,
+  interval,
   map,
 } from 'rxjs';
 import { AppService } from './app-service.service';
@@ -17,6 +19,7 @@ import { User } from './models/users.model';
 })
 export class AppComponent implements OnInit {
   title = 'Angular-RXJS';
+  timerValue: number = 0;
 
   currentTime$: Observable<Date> = new Observable<Date>((observer) => {
     setInterval(() => {
@@ -39,10 +42,12 @@ export class AppComponent implements OnInit {
 
   data3$?: Observable<User>;
 
+  timerSubscription?: Subscription;
+
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
-    // this.currentTime$.subscribe((time) => console.log(time));
+    this.currentTime$.subscribe((time) => console.log(time));
 
     this.searchInput$ = fromEvent(
       document.getElementById('searchInput')!,
@@ -89,5 +94,16 @@ export class AppComponent implements OnInit {
       (data) => console.log(data),
       (error) => console.log(error)
     );
+  }
+
+  startTimer(): void {
+    this.timerSubscription = interval(1000).subscribe(() => {
+      this.timerValue++;
+    });
+  }
+
+  stopTimer() {
+    this.timerSubscription?.unsubscribe();
+    this.timerValue = 0;
   }
 }
