@@ -8,6 +8,7 @@ import {
   map,
 } from 'rxjs';
 import { AppService } from './app-service.service';
+import { User } from './models/users.model';
 
 @Component({
   selector: 'app-root',
@@ -36,10 +37,12 @@ export class AppComponent implements OnInit {
   input4$?: Observable<number>;
   sum$?: Observable<number>;
 
+  data3$?: Observable<User>;
+
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
-    this.currentTime$.subscribe((time) => console.log(time));
+    // this.currentTime$.subscribe((time) => console.log(time));
 
     this.searchInput$ = fromEvent(
       document.getElementById('searchInput')!,
@@ -80,5 +83,11 @@ export class AppComponent implements OnInit {
       map(([input3, input4]) => input3 + input4)
     );
     this.sum$.subscribe((sum) => console.log(sum));
+
+    this.data3$ = this.appService.getData1();
+    this.data3$.subscribe(
+      (data) => console.log(data),
+      (error) => console.log(error)
+    );
   }
 }
