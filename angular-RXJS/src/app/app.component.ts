@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Observable, fromEvent, map } from 'rxjs';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,21 @@ export class AppComponent implements OnInit {
     }, 1000);
   });
 
+  searchInput$?: Observable<string>;
+
   constructor() {}
 
   ngOnInit(): void {
     this.currentTime$.subscribe((time) => console.log(time));
+
+    this.searchInput$ = fromEvent(
+      document.getElementById('searchInput')!,
+      'input'
+    ).pipe(
+      debounceTime(500),
+      map((event: Event) => (event.target as HTMLInputElement).value)
+    );
+
+    this.searchInput$.subscribe((value) => console.log(value));
   }
 }
