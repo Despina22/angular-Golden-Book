@@ -1,6 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable, combineLatest, fromEvent, map } from 'rxjs';
-import { debounceTime } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import {
+  Observable,
+  combineLatest,
+  debounceTime,
+  forkJoin,
+  fromEvent,
+  map,
+} from 'rxjs';
+import { AppService } from './app-service.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +29,10 @@ export class AppComponent implements OnInit {
   input2$?: Observable<Event>;
   result$?: Observable<[string, string]>;
 
-  constructor() {}
+  data1$?: Observable<any>;
+  data2$?: Observable<any>;
+
+  constructor(private appService: AppService) {}
 
   ngOnInit(): void {
     this.currentTime$.subscribe((time) => console.log(time));
@@ -47,5 +57,12 @@ export class AppComponent implements OnInit {
     );
 
     this.result$.subscribe((value) => console.log(value));
+
+    this.data1$ = this.appService.getData1();
+    this.data2$ = this.appService.getData2();
+
+    forkJoin([this.data1$, this.data2$]).subscribe((results) =>
+      console.log('Combined results:', results)
+    );
   }
 }
