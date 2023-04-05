@@ -8,12 +8,10 @@
   }
 
   .book-overview-content-table {
-    width: 75vw;
-
     background-color: $books-background-color;
     border-radius: 3px;
     padding: 10px;
-    margin: 0px auto 30px;
+    margin: 0px auto;
 
     mat-cell,
     mat-header-cell,

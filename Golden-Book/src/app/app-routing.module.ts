@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { BooksComponent } from './features/books-content/components/books/books.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
-import { BookDetailsComponent } from './features/books-content/components/book-details/book-details.component';
 
 const appRouter: Routes = [
-  { path: '', component: BooksComponent },
-  { path: 'book/:bookId', component: BookDetailsComponent },
+  { path: '', redirectTo: 'books', pathMatch: 'full' },
+  {
+    path: 'books',
+    loadChildren: () =>
+      import('../app/features/books-content/books.module').then(
+        (module) => module.BooksModule
+      ),
+  },
   {
     path: 'admin',
     loadChildren: () =>

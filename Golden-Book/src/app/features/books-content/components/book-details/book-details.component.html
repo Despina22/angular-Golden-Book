@@ -1,29 +1,34 @@
-<div class="wrapper" *ngIf="book">
+<div class="wrapper" *ngIf="bookDetails">
   <div class="main-heading-container">
-    <h2 class="main-heading">Book Overview - {{ book.title }}</h2>
+    <h2 class="main-heading">Book Overview - {{ bookDetails.title }}</h2>
   </div>
-  <mat-card class="book-overview-content" [appCategoryColor]="book.category">
+  <mat-card
+    class="book-overview-content"
+    [appCategoryColor]="bookDetails.category"
+  >
     <mat-card-header class="book-overview-title">
       <mat-card-title class="book-overview-heading">{{
-        book.title
+        bookDetails.title
       }}</mat-card-title>
     </mat-card-header>
     <div class="all-description">
       <mat-card-content class="card-content">
-        <img src="{{ book.url }}" class="book-overview-img" />
+        <img src="{{ bookDetails.url }}" class="book-overview-img" />
       </mat-card-content>
       <div class="description">
         <p style="color: red">BookId: # {{ bookId }}</p>
         <h4 class="book-overview-text">
-          {{ book.author }}, {{ book.publishedDate }}
+          {{ bookDetails.author }}, {{ bookDetails.publishedDate }}
         </h4>
-        <p class="book-overview-text">Country: {{ book.country }}</p>
-        <p class="book-overview-text">Category: {{ book.category }}</p>
-        <p class="book-overview-text">ISBN: {{ book.isbn }}</p>
-        <p class="book-overview-description">{{ book.description }}</p>
-        <h4 class="book-overview-text">{{ book.author }},{{ book.country }}</h4>
+        <p class="book-overview-text">Country: {{ bookDetails.country }}</p>
+        <p class="book-overview-text">Category: {{ bookDetails.category }}</p>
+        <p class="book-overview-text">ISBN: {{ bookDetails.isbn }}</p>
+        <p class="book-overview-description">{{ bookDetails.description }}</p>
+        <h4 class="book-overview-text">
+          {{ bookDetails.author }},{{ bookDetails.country }}
+        </h4>
         <p class="book-overview-author-description">
-          {{ book.authorDescription }}
+          {{ bookDetails.authorDescription }}
         </p>
       </div>
     </div>
@@ -33,7 +38,7 @@
   </div>
 </div>
 
-<div class="error-wrapper" *ngIf="!book">
+<div class="error-wrapper" *ngIf="!bookDetails">
   <mat-icon>warning</mat-icon>
   <p>Book is not found!!!</p>
 </div>

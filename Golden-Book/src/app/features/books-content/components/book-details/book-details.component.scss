@@ -62,15 +62,23 @@
         .book-overview-description {
           height: 90px;
           font-size: 16px;
+          line-height: 22px;
           overflow: hidden;
           margin: 10px 15px;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
         }
 
         .book-overview-author-description {
           height: 70px;
           font-size: 16px;
+          line-height: 22px;
           overflow: hidden;
           margin: 15px 15px 0px 15px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
         }
       }
     }
@@ -98,15 +106,23 @@
     @include error-wrapper;
   }
 
-  @media only screen and (min-width: 576px) and (max-width: 768px) {
+  @media only screen and (max-width: 576px) {
     .all-description {
       flex-wrap: wrap;
     }
   }
 
-  @media only screen and (max-width: 576px) {
-    .all-description {
-      flex-wrap: wrap;
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    .wrapper {
+      .book-overview-content {
+        .all-description {
+          flex-wrap: wrap;
+
+          .book-overview-img {
+            max-width: 340px;
+          }
+        }
+      }
     }
   }
 }

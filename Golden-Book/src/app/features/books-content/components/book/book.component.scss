@@ -46,14 +46,18 @@
       .img {
         margin-right: 15px;
         width: 100px;
-        height: 150px;
+        height: 155px;
         border-radius: 3px;
       }
       .author {
         max-width: 250px;
         font-size: 14px;
         margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
+
       .book-category {
         max-width: 250px;
         height: 20px;
@@ -63,10 +67,15 @@
         text-overflow: ellipsis;
         overflow: hidden;
       }
+
       .book-description {
-        height: 70px;
+        height: 75px;
         font-size: 13px;
         overflow: hidden;
+        display: -webkit-box;
+        // max-width: 200px;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
       }
 
       .card-actions {
@@ -170,6 +179,10 @@
       }
       .all-description {
         flex-wrap: nowrap;
+
+        .author {
+          width: 130px;
+        }
 
         .book-category {
           width: 120px;
