@@ -9,6 +9,7 @@
       *ngFor="let book of books"
       [book]="book"
       [appCategoryColor]="book.category"
+      (bookDeleted)="getBooks()"
     ></app-book>
   </div>
   <app-pagination></app-pagination>

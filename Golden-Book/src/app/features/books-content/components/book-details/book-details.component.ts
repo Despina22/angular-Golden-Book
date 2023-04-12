@@ -2,7 +2,7 @@ import { Book } from 'src/app/features/models/single-book.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from '../../services/book.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, catchError, take, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-book-details',
@@ -24,8 +24,10 @@ export class BookDetailsComponent implements OnInit {
 
     this.bookService
       .getById(+this.bookId)
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((book) => (this.bookDetails = book));
+      .pipe(take(1))
+      .subscribe({
+        next: (book) => (this.bookDetails = book),
+      });
   }
 
   ngOnDestroy(): void {

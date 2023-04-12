@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject, switchMap, take, takeUntil } from 'rxjs';
 import { Book } from 'src/app/features/models/single-book.model';
 import { BookService } from '../../services/book.service';
-import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-books',
@@ -15,9 +15,20 @@ export class BooksComponent implements OnInit, OnDestroy {
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
+    this.getBooks();
+
+    this.bookService.searchValue$
+      .asObservable()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((data) => {
+        console.log('Search', data);
+      });
+  }
+
+  getBooks(): void {
     this.bookService
       .getData()
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(take(1))
       .subscribe((data) => (this.books = data));
   }
 

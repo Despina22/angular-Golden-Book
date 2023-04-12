@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { SidebarService } from 'src/app/shared/services/sidebar.service';
+import { Component } from '@angular/core';
+import { SidebarService } from 'src/app/shared/services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   toggle: boolean = false;
   constructor(private sidebarService: SidebarService) {}
-
-  ngOnInit(): void {}
 
   toggleSidebar() {
     this.toggle = !this.toggle;

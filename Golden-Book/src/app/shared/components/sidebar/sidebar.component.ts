@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
-import { SidebarService } from '../../services/sidebar.service';
-import { CategoryService } from '../../services/category.service';
+import { Subject, map, take, takeUntil } from 'rxjs';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
+import { CategoryService } from '../../services/category/category.service';
 import { Category } from '../../enums/category.enum';
+import { CategoryData } from '../../models/category.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +13,7 @@ import { Category } from '../../enums/category.enum';
 export class SidebarComponent implements OnInit, OnDestroy {
   unsubscribe$: Subject<void> = new Subject<void>();
   isOpen: boolean = false;
-  categories: Category[];
+  categories: string[];
 
   constructor(
     private sidebarService: SidebarService,
@@ -26,8 +27,15 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
     this.categoryService
       .getCategories()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((categories) => (this.categories = categories));
+      .pipe(
+        take(1),
+        map((categories: CategoryData[]) =>
+          categories.map((category: CategoryData) => category.name)
+        )
+      )
+      .subscribe((categories: string[]) => {
+        this.categories = categories;
+      });
   }
 
   ngOnDestroy(): void {

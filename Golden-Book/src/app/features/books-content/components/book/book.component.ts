@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Book } from 'src/app/features/models/single-book.model';
+import { BookService } from '../../services/book.service';
+import { switchMap, take } from 'rxjs';
 
 @Component({
   selector: 'app-book',
@@ -8,7 +10,27 @@ import { Book } from 'src/app/features/models/single-book.model';
 })
 export class BookComponent implements OnInit {
   @Input() book: Book;
-  constructor() {}
+  @Output() bookDeleted = new EventEmitter<string>();
+
+  constructor(private bookService: BookService) {}
 
   ngOnInit(): void {}
+
+  deleteBook(book: Book): void {
+    this.bookService
+      .deleteData(book)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.bookDeleted.emit();
+      });
+  }
+
+  softDeleteBook(book: Book): void {
+    this.bookService
+      .softDelete(book)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.bookDeleted.emit();
+      });
+  }
 }

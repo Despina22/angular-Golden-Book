@@ -6,7 +6,7 @@
 
   .heading {
     color: $font-color;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 700;
     margin: 15px 0px 0px 0px;
   }
@@ -33,48 +33,3 @@
     border: transparent;
   }
 }
-
-// @media (max-width: 575.98px) {
-//   .forms {
-//     margin-left: 0;
-//   }
-//   .books-wrapper {
-//     margin-left: 0;
-//   }
-// }
-
-// @media (min-width: 576px) and (max-width: 767.98px) {
-//   .forms {
-//     margin-left: 15px;
-//   }
-//   .books-wrapper {
-//     margin-left: 15px;
-//   }
-// }
-
-// @media (min-width: 768px) and (max-width: 991.98px) {
-//   .forms {
-//     margin-left: 30px;
-//   }
-//   .books-wrapper {
-//     margin-left: 30px;
-//   }
-// }
-
-// @media (min-width: 992px) and (max-width: 1199.98px) {
-//   .forms {
-//     margin-left: 50px;
-//   }
-//   .books-wrapper {
-//     margin-left: 50px;
-//   }
-// }
-
-// @media (min-width: 1200px) {
-//   .forms {
-//     margin-left: 80px;
-//   }
-//   .books-wrapper {
-//     margin-left: 80px;
-//   }
-// }

@@ -16,6 +16,10 @@
         <button class="book-btn" routerLink="book/{{ book.id }}">
           Book Overview
         </button>
+        <button class="book-btn" (click)="deleteBook(book)">Delete</button>
+        <button class="book-btn" (click)="softDeleteBook(book)">
+          Soft Delete
+        </button>
       </mat-card-actions>
     </div>
   </div>

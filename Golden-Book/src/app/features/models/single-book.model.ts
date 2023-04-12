@@ -9,4 +9,5 @@ export interface Book {
   authorDescription?: string;
   category: string;
   url: string;
+  deletedAt?: Date;
 }

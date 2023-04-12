@@ -1,8 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Category } from '../../enums/category.enum';
-import { CategoryService } from '../../services/category.service';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject, map, take } from 'rxjs';
+import { CategoryService } from '../../services/category/category.service';
+import { CategoryData } from './../../models/category.model';
 
 @Component({
   selector: 'app-filter',
@@ -11,15 +10,22 @@ import { takeUntil } from 'rxjs';
 })
 export class FilterComponent implements OnInit, OnDestroy {
   unsubscribe$: Subject<void> = new Subject<void>();
-  categories: Category[];
+  categories: string[];
 
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
     this.categoryService
       .getCategories()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((categories) => (this.categories = categories));
+      .pipe(
+        take(1),
+        map((categories: CategoryData[]) =>
+          categories.map((category: CategoryData) => category.name)
+        )
+      )
+      .subscribe((categories: string[]) => {
+        this.categories = categories;
+      });
   }
 
   ngOnDestroy(): void {
