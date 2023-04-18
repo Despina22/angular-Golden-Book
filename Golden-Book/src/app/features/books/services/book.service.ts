@@ -34,13 +34,8 @@ export class BookService {
 
   softDelete(book: Book): Observable<Book> {
     const now = new Date().toISOString();
-    return this.http
-      .patch(`${environment.baseApiUrl}books/${book.id}`, { deletedAt: now })
-      .pipe(
-        map((book: Book) => {
-          book.deletedAt = new Date(now);
-          return book;
-        })
-      );
+    return this.http.patch<Book>(`${environment.baseApiUrl}books/${book.id}`, {
+      deletedAt: now,
+    });
   }
 }
