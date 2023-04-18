@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { Category } from 'src/app/shared/enums/category.enum';
+import { Category } from 'src/app/shared/models/category.model';
 
 @Directive({
   selector: '[appCategoryColor]',
@@ -11,19 +11,19 @@ export class CategoryColorDirective implements OnInit {
 
   ngOnInit(): void {
     switch (this.category) {
-      case Category.SCIENCE:
+      case 'Science':
         this.setStyles('rgb(242, 239, 220)', 'rgb(22, 15, 9)');
         break;
-      case Category.HISTORY:
+      case 'History':
         this.setStyles('white', 'red');
         break;
-      case Category.CHILDRENACTION:
+      case "Children's Action":
         this.setStyles('pink', 'blue');
         break;
-      case Category.LITERARY:
+      case 'Literary':
         this.setStyles('green', 'yellow');
         break;
-      case Category.PSYCHOLOGY:
+      case 'Psychology':
         this.setStyles('green', 'red');
         break;
       default:

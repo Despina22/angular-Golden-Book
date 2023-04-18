@@ -2,8 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, map, take, takeUntil } from 'rxjs';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 import { CategoryService } from '../../services/category/category.service';
-import { Category } from '../../enums/category.enum';
-import { CategoryData } from '../../models/category.model';
+import { Category } from '../../models/category.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -29,8 +28,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
       .getCategories()
       .pipe(
         take(1),
-        map((categories: CategoryData[]) =>
-          categories.map((category: CategoryData) => category.name)
+        map((categories: Category[]) =>
+          categories.map((category: Category) => category.name)
         )
       )
       .subscribe((categories: string[]) => {

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, map, take } from 'rxjs';
 import { CategoryService } from '../../services/category/category.service';
-import { CategoryData } from './../../models/category.model';
+import { Category } from './../../models/category.model';
 
 @Component({
   selector: 'app-filter',
@@ -19,8 +19,8 @@ export class FilterComponent implements OnInit, OnDestroy {
       .getCategories()
       .pipe(
         take(1),
-        map((categories: CategoryData[]) =>
-          categories.map((category: CategoryData) => category.name)
+        map((categories: Category[]) =>
+          categories.map((category: Category) => category.name)
         )
       )
       .subscribe((categories: string[]) => {
