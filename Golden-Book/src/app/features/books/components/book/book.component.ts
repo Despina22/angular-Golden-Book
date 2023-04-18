@@ -18,7 +18,7 @@ export class BookComponent implements OnInit {
 
   deleteBook(book: Book): void {
     this.bookService
-      .deleteData(book)
+      .deleteBook(book)
       .pipe(take(1))
       .subscribe(() => {
         this.bookDeleted.emit();

@@ -28,7 +28,7 @@ export class BookService {
     return this.http.get<Book>(`${environment.baseApiUrl}books/${id}`);
   }
 
-  deleteData(book: Book): Observable<Book> {
+  deleteBook(book: Book): Observable<Book> {
     return this.http.delete<any>(`${environment.baseApiUrl}books/${book.id}`);
   }
 
