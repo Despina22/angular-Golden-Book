@@ -1,4 +1,4 @@
-import { BookService } from 'src/app/features/books-content/services/book.service';
+import { BookService } from 'src/app/features/books/services/book.service';
 import { Book } from './../../../models/single-book.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, take } from 'rxjs';

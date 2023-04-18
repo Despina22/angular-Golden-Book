@@ -8,7 +8,7 @@ const appRouter: Routes = [
   {
     path: 'books',
     loadChildren: () =>
-      import('../app/features/books-content/books.module').then(
+      import('../app/features/books/books.module').then(
         (module) => module.BooksModule
       ),
   },
