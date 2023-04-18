@@ -6,21 +6,18 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SearchComponent } from './components/search/search.component';
 import { MaterialModule } from './material/material.module';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     SearchComponent,
     FilterComponent,
-    SidebarComponent,
     PaginationComponent,
     PageNotFoundComponent,
   ],
-  imports: [CommonModule, MaterialModule, RouterModule],
+  imports: [CommonModule, MaterialModule],
   exports: [
     SearchComponent,
     FilterComponent,
-    SidebarComponent,
     PaginationComponent,
     PageNotFoundComponent,
   ],

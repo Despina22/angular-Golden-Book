@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, map, take, takeUntil } from 'rxjs';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
-import { CategoryService } from '../../services/category/category.service';
-import { Category } from '../../models/category.model';
+import { CategoryService } from '../../../shared/services/category/category.service';
+import { Category } from '../../../shared/models/category.model';
 
 @Component({
   selector: 'app-sidebar',
