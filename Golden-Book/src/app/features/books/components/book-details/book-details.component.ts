@@ -11,7 +11,7 @@ import { Subject, catchError, take, throwError } from 'rxjs';
 })
 export class BookDetailsComponent implements OnInit {
   unsubscribe$: Subject<void> = new Subject<void>();
-  bookId: string;
+  bookId: number;
   bookDetails: Book;
 
   constructor(
@@ -20,13 +20,13 @@ export class BookDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.bookId = this.activatedRouter.snapshot.paramMap.get('bookId');
+    this.bookId = +this.activatedRouter.snapshot.paramMap.get('bookId');
     this.getBookDetails();
   }
 
   getBookDetails(): void {
     this.bookService
-      .getById(+this.bookId)
+      .getById(this.bookId)
       .pipe(take(1))
       .subscribe({
         next: (book) => (this.bookDetails = book),
