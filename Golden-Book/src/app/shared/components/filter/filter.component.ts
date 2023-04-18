@@ -15,6 +15,10 @@ export class FilterComponent implements OnInit, OnDestroy {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
+    this.getCategories();
+  }
+
+  getCategories(): void {
     this.categoryService
       .getCategories()
       .pipe(

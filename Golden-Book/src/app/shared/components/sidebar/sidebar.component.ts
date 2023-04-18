@@ -20,10 +20,17 @@ export class SidebarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.toggleSidebar();
+    this.getCategories();
+  }
+
+  toggleSidebar(): void {
     this.sidebarService.toggleSidebar$
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((toggle) => (this.isOpen = toggle));
+  }
 
+  getCategories(): void {
     this.categoryService
       .getCategories()
       .pipe(
