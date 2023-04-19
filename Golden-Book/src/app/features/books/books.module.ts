@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
+import { SharedModule } from 'src/app/shared/shared.module';
 import { CategoryColorDirective } from '../directives/category-color.directive';
 import { BooksRoutingModule } from './books-routing.module';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
-import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,12 +23,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatCardModule,
     MatIconModule,
     BooksRoutingModule,
-  ],
-  exports: [
-    BooksComponent,
-    BookComponent,
-    BookDetailsComponent,
-    CategoryColorDirective,
   ],
 })
 export class BooksModule {}
