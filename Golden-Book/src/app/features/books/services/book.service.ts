@@ -9,11 +9,12 @@ import { environment } from '@env';
 })
 export class BookService {
   searchValue$: Subject<string> = new Subject<string>();
+  private readonly bookUrl = `${environment.baseApiUrl}books`;
 
   constructor(private http: HttpClient) {}
 
   getData(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${environment.baseApiUrl}books`).pipe(
+    return this.http.get<Book[]>(this.bookUrl).pipe(
       map((books) => books.filter((book) => book.deletedAt === null)),
       catchError((error: any) => {
         console.error('Error:', error);
@@ -25,16 +26,16 @@ export class BookService {
   }
 
   getById(id: number): Observable<Book> {
-    return this.http.get<Book>(`${environment.baseApiUrl}books/${id}`);
+    return this.http.get<Book>(`${this.bookUrl}/${id}`);
   }
 
   deleteBook(book: Book): Observable<Book> {
-    return this.http.delete<any>(`${environment.baseApiUrl}books/${book.id}`);
+    return this.http.delete<any>(`${this.bookUrl}/${book.id}`);
   }
 
   softDelete(book: Book): Observable<Book> {
     const now = new Date().toISOString();
-    return this.http.patch<Book>(`${environment.baseApiUrl}books/${book.id}`, {
+    return this.http.patch<Book>(`${this.bookUrl}/${book.id}`, {
       deletedAt: now,
     });
   }

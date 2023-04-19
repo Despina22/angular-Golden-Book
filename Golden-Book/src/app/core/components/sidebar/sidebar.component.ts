@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, map, take, takeUntil } from 'rxjs';
-import { SidebarService } from '../../services/sidebar/sidebar.service';
+import { Subject, take, takeUntil } from 'rxjs';
 import { CategoryService } from '../../../shared/services/category/category.service';
-import { Category } from '../../../shared/models/category.model';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -33,12 +32,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   getCategories(): void {
     this.categoryService
       .getCategories()
-      .pipe(
-        take(1),
-        map((categories: Category[]) =>
-          categories.map((category: Category) => category.name)
-        )
-      )
+      .pipe(take(1))
       .subscribe((categories: string[]) => {
         this.categories = categories;
       });

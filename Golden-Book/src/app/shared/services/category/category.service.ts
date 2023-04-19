@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of, shareReplay } from 'rxjs';
 import { Category } from '../../models/category.model';
 import { environment } from '@env';
 
@@ -8,9 +8,20 @@ import { environment } from '@env';
   providedIn: 'root',
 })
 export class CategoryService {
+  private categories$: Observable<Category[]>;
+
   constructor(private http: HttpClient) {}
 
-  getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${environment.baseApiUrl}categories`);
+  getCategories(): Observable<string[]> {
+    if (!this.categories$) {
+      this.categories$ = this.http
+        .get<Category[]>(`${environment.baseApiUrl}categories`)
+        .pipe(shareReplay());
+    }
+    return this.categories$.pipe(
+      map((categories: Category[]) =>
+        categories.map((category: Category) => category.name)
+      )
+    );
   }
 }
