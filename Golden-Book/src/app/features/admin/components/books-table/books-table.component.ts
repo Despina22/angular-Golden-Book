@@ -9,8 +9,6 @@ import { Subject, take } from 'rxjs';
   styleUrls: ['./books-table.component.scss'],
 })
 export class BooksTableComponent implements OnInit, OnDestroy {
-  unsubscribe$: Subject<void> = new Subject<void>();
-
   displayedColumns: string[] = [
     'id',
     'url',
@@ -23,6 +21,7 @@ export class BooksTableComponent implements OnInit, OnDestroy {
     'authorDescription',
   ];
   dataSource: Book[];
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(private bookService: BookService) {}
 

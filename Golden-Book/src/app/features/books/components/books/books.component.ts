@@ -9,8 +9,8 @@ import { BookService } from '../../services/book.service';
   styleUrls: ['./books.component.scss'],
 })
 export class BooksComponent implements OnInit, OnDestroy {
-  unsubscribe$: Subject<void> = new Subject<void>();
   books: Book[];
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(private bookService: BookService) {}
 

@@ -8,8 +8,8 @@ import { CategoryService } from '../../services/category/category.service';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit, OnDestroy {
-  unsubscribe$: Subject<void> = new Subject<void>();
   categories: string[];
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(private categoryService: CategoryService) {}
 

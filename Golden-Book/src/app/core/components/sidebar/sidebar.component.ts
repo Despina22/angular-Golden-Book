@@ -9,9 +9,9 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit, OnDestroy {
-  unsubscribe$: Subject<void> = new Subject<void>();
   isOpen: boolean = false;
   categories: string[];
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
     private sidebarService: SidebarService,

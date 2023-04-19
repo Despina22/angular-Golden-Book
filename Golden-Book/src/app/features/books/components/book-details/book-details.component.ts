@@ -10,9 +10,9 @@ import { Subject, catchError, take, throwError } from 'rxjs';
   styleUrls: ['./book-details.component.scss'],
 })
 export class BookDetailsComponent implements OnInit {
-  unsubscribe$: Subject<void> = new Subject<void>();
   bookId: number;
   bookDetails: Book;
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
     private activatedRouter: ActivatedRoute,
