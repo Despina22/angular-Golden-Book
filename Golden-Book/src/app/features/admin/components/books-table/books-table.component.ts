@@ -2,6 +2,8 @@ import { BookService } from 'src/app/features/books/services/book.service';
 import { Book } from './../../../models/single-book.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, take } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ReadMoreDialogComponent } from 'src/app/shared/components/read-more-dialog/read-more-dialog.component';
 
 @Component({
   selector: 'app-books-table',
@@ -23,7 +25,7 @@ export class BooksTableComponent implements OnInit, OnDestroy {
   dataSource: Book[];
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getBooks();
@@ -34,6 +36,12 @@ export class BooksTableComponent implements OnInit, OnDestroy {
       .getData()
       .pipe(take(1))
       .subscribe((data) => (this.dataSource = data));
+  }
+
+  readMore(description: string) {
+    this.dialog.open(ReadMoreDialogComponent, {
+      data: { description },
+    });
   }
 
   ngOnDestroy(): void {

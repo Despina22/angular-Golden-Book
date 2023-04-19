@@ -1,0 +1,23 @@
+@import "../../../../styles/variables.scss";
+
+:host {
+  .read-more-dialog {
+    width: 35vw;
+    padding: 10px;
+
+    .dialog-content {
+      font-size: 15px;
+      margin: 10px 0;
+    }
+
+    .dialog-btn {
+      font-size: 12px;
+      color: $font-color;
+      background-color: $btn-background-color;
+      text-transform: uppercase;
+      border: transparent;
+      border-radius: 3px;
+      padding: 6px 18px;
+    }
+  }
+}

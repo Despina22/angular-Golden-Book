@@ -6,20 +6,18 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 
 import { MaterialModule } from './material/material.module';
 import { SearchComponent } from './components/search/search.component';
+import { ReadMoreDialogComponent } from './components/read-more-dialog/read-more-dialog.component';
+import { FormsModule } from '@angular/forms';
 
+const COMPONENTS = [
+  SearchComponent,
+  FilterComponent,
+  PaginationComponent,
+  PageNotFoundComponent,
+];
 @NgModule({
-  declarations: [
-    SearchComponent,
-    FilterComponent,
-    PaginationComponent,
-    PageNotFoundComponent,
-  ],
-  imports: [CommonModule, MaterialModule],
-  exports: [
-    SearchComponent,
-    FilterComponent,
-    PaginationComponent,
-    PageNotFoundComponent,
-  ],
+  declarations: [...COMPONENTS, ReadMoreDialogComponent],
+  imports: [CommonModule, FormsModule, MaterialModule],
+  exports: [...COMPONENTS],
 })
 export class SharedModule {}

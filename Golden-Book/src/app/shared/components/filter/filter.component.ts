@@ -9,6 +9,7 @@ import { CategoryService } from '../../services/category/category.service';
 })
 export class FilterComponent implements OnInit, OnDestroy {
   categories: string[];
+
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(private categoryService: CategoryService) {}

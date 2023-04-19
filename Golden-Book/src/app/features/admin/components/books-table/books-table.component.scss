@@ -7,56 +7,82 @@
     margin: 10px auto;
   }
 
-  .book-overview-content-table {
+  .book-overview {
     background-color: $books-background-color;
-    border-radius: 3px;
+    width: 75vw;
     padding: 10px;
+    border-radius: 3px;
     margin: 0px auto;
 
-    mat-cell,
-    mat-header-cell,
-    mat-footer-cell {
-      ::ng-deep {
-        flex: none;
-        padding-left: 0px;
+    .book-overview-content-table {
+      background-color: $books-background-color;
+
+      mat-cell,
+      mat-header-cell,
+      mat-footer-cell {
+        ::ng-deep {
+          flex: none;
+          padding-left: 0px;
+        }
+      }
+
+      mat-row,
+      mat-header-row,
+      mat-footer-row {
+        // height: 40px;
+      }
+
+      .id-container {
+        width: 25px;
+      }
+      .img-container,
+      .year-container {
+        width: 50px;
+      }
+      .title-container,
+      .author-container,
+      .category-container,
+      .description-container,
+      .isbn-container {
+        width: 120px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      .review-description {
+        width: 190px;
+        height: 50px;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      .book-table-img {
+        width: 35px;
+        height: 55px;
+        border-radius: 3px;
+      }
+
+      .table-row {
+        height: 60px;
       }
     }
+  }
 
-    mat-row,
-    mat-header-row,
-    mat-footer-row {
-      height: 50px;
-    }
+  .add-book-btn {
+    width: 75vw;
+    display: flex;
+    justify-content: end;
+    margin: 10px 0px;
 
-    .id-container {
-      width: 30px;
-    }
-    .img-container,
-    .year-container {
-      width: 70px;
-    }
-    .title-container,
-    .author-container,
-    .category-container,
-    .description-container,
-    .isbn-container {
-      width: 150px;
-    }
-
-    .review-description {
-      width: 280px;
-      height: 60px;
-      overflow: hidden;
-    }
-
-    .book-table-img {
-      width: 40px;
-      height: 60px;
+    .add-book {
+      font-size: 15px;
+      color: $font-color;
+      background-color: $btn-background-color;
+      text-transform: uppercase;
+      border: none;
       border-radius: 3px;
-    }
-
-    .table-row {
-      height: 70px;
+      padding: 10px 25px;
     }
   }
 }
