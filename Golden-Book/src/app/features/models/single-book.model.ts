@@ -4,7 +4,7 @@ export interface Book {
   author: string;
   country?: string;
   isbn?: string;
-  publishedDate: number;
+  publishedDate: Date;
   description: string;
   authorDescription?: string;
   category: string;

@@ -18,7 +18,8 @@
       <div class="description">
         <p style="color: red">BookId: # {{ bookId }}</p>
         <h4 class="book-overview-text">
-          {{ bookDetails.author }}, {{ bookDetails.publishedDate }}
+          {{ bookDetails.author }},
+          {{ bookDetails.publishedDate | date : "yyyy" }}
         </h4>
         <p class="book-overview-text">Country: {{ bookDetails.country }}</p>
         <p class="book-overview-text">Category: {{ bookDetails.category }}</p>
