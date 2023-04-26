@@ -1,0 +1,33 @@
+<div class="read-more-dialog">
+  <h3 mat-dialog-title class="dialog-title">
+    {{ data.title }}
+  </h3>
+  <div mat-dialog-content class="dialog-content">
+    {{ data.description }}
+  </div>
+  <div mat-dialog-actions>
+    <ng-container *ngIf="data.oneButton">
+      <button mat-button mat-dialog-close class="dialog-btn" (click)="close()">
+        {{ data.buttonText }}
+      </button>
+    </ng-container>
+    <ng-container *ngIf="!data.oneButton">
+      <button
+        mat-button
+        mat-dialog-close
+        class="dialog-btn"
+        (click)="closeYes()"
+      >
+        Yes
+      </button>
+      <button
+        mat-button
+        mat-dialog-close
+        class="dialog-btn"
+        (click)="closeNo()"
+      >
+        No
+      </button>
+    </ng-container>
+  </div>
+</div>

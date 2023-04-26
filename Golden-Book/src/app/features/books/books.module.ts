@@ -9,6 +9,7 @@ import { BooksRoutingModule } from './books-routing.module';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BooksComponent } from './components/books/books.component';
     MatCardModule,
     MatIconModule,
     BooksRoutingModule,
+    MatDialogModule,
   ],
 })
 export class BooksModule {}

@@ -6,8 +6,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 
 import { MaterialModule } from './material/material.module';
 import { SearchComponent } from './components/search/search.component';
-import { ReadMoreDialogComponent } from './components/read-more-dialog/read-more-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 const COMPONENTS = [
   SearchComponent,
@@ -16,7 +16,7 @@ const COMPONENTS = [
   PageNotFoundComponent,
 ];
 @NgModule({
-  declarations: [...COMPONENTS, ReadMoreDialogComponent],
+  declarations: [...COMPONENTS, DialogComponent],
   imports: [CommonModule, FormsModule, MaterialModule],
   exports: [...COMPONENTS],
 })

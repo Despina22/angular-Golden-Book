@@ -1,6 +1,6 @@
 <mat-form-field class="form-input" [floatLabel]="'never'">
   <mat-label class="text-label">Filter by Category</mat-label>
-  <mat-select multiple>
+  <mat-select multiple (valueChange)="onChange($event)" [value]="defaultValue">
     <mat-option *ngFor="let category of categories" value="{{ category }}">{{
       category
     }}</mat-option>

@@ -3,7 +3,7 @@ import { Book } from './../../../models/single-book.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, take } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { ReadMoreDialogComponent } from 'src/app/shared/components/read-more-dialog/read-more-dialog.component';
+import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-books-table',
@@ -39,8 +39,14 @@ export class BooksTableComponent implements OnInit, OnDestroy {
   }
 
   readMore(description: string) {
-    this.dialog.open(ReadMoreDialogComponent, {
-      data: { description },
+    this.dialog.open(DialogComponent, {
+      data: {
+        description,
+        title: 'Book Description',
+        oneButton: true,
+        buttonText: 'Close',
+      },
+      position: { top: '40px' },
     });
   }
 

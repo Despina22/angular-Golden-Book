@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { SaveFiltersGuard } from './core/guards/save-filters.guard';
 
 const appRouter: Routes = [
   { path: '', redirectTo: 'books', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const appRouter: Routes = [
       import('../app/features/books/books.module').then(
         (module) => module.BooksModule
       ),
+    // canDeactivate: [SaveFiltersGuard],
   },
   {
     path: 'admin',

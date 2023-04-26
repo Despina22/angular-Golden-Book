@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subject, take } from 'rxjs';
 import { CategoryService } from '../../services/category/category.service';
 
@@ -7,15 +7,17 @@ import { CategoryService } from '../../services/category/category.service';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent implements OnInit, OnDestroy {
-  categories: string[];
+export class FilterComponent implements OnInit {
+  @Output() selectedCategories = new EventEmitter<string[]>();
 
-  private unsubscribe$: Subject<void> = new Subject<void>();
+  categories: string[];
+  defaultValue: string[] = [];
 
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
     this.getCategories();
+    this.getDefaultValue();
   }
 
   getCategories(): void {
@@ -27,8 +29,15 @@ export class FilterComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+  getDefaultValue() {
+    const filters = localStorage.getItem('filters');
+
+    if (filters) {
+      this.defaultValue = JSON.parse(filters).categoryName;
+    }
+  }
+
+  onChange(event: string[]) {
+    this.selectedCategories.emit(event);
   }
 }

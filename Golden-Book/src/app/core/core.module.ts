@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     MatExpansionModule,
     MatMenuModule,
     RouterModule,
+    MatDialogModule,
   ],
   exports: [HeaderComponent, FooterComponent, SidebarComponent],
 })

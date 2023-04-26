@@ -2,7 +2,10 @@
   <h2 class="heading">Homepage</h2>
   <div class="forms">
     <app-search></app-search>
-    <app-filter class="filter"></app-filter>
+    <app-filter
+      class="filter"
+      (selectedCategories)="storeCategory($event)"
+    ></app-filter>
   </div>
   <div class="books-wrapper">
     <app-book

@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, take, takeUntil } from 'rxjs';
 import { Book } from 'src/app/features/models/single-book.model';
 import { BookService } from '../../services/book.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-books',
@@ -11,8 +13,10 @@ import { BookService } from '../../services/book.service';
 export class BooksComponent implements OnInit, OnDestroy {
   books: Book[];
   private unsubscribe$: Subject<void> = new Subject<void>();
+  categoryName: string[] = [];
+  searchedValue: string = '';
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getBooks();
@@ -31,11 +35,36 @@ export class BooksComponent implements OnInit, OnDestroy {
       .asObservable()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((data) => {
-        console.log('Search', data);
+        this.searchedValue = data;
       });
   }
 
+  storeCategory(categoryName: string[]) {
+    this.categoryName = categoryName;
+  }
+
   ngOnDestroy(): void {
+    this.dialog
+      .open(DialogComponent, {
+        data: {
+          description: 'Do you want to save filters?',
+          title: 'Save Filters',
+          oneButton: false,
+        },
+        position: { top: '40px' },
+      })
+      .afterClosed()
+      .subscribe((shouldSave) => {
+        if (shouldSave) {
+          const filter = {
+            searchedValue: this.searchedValue,
+            categoryName: this.categoryName,
+          };
+
+          localStorage.setItem('filters', JSON.stringify(filter));
+        }
+      });
+
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
