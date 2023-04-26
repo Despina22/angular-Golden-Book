@@ -1,0 +1,5 @@
+@mixin background-image {
+  background: no-repeat url("../assets/images/golden-book-image.png");
+  background-position: left 15% bottom 50%, center;
+  background-size: 700px 630px, contain;
+}

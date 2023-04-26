@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../../models/single-book.model';
 import { Observable, Subject, catchError, map, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '@env';
 
 @Injectable({
@@ -26,7 +26,10 @@ export class BookService {
   }
 
   getById(id: number): Observable<Book> {
-    return this.http.get<Book>(`${this.bookUrl}/${id}`);
+    const headers = new HttpHeaders({
+      PageName: 'Book Overview',
+    });
+    return this.http.get<Book>(`${this.bookUrl}/${id}`, { headers: headers });
   }
 
   deleteBook(book: Book): Observable<Book> {

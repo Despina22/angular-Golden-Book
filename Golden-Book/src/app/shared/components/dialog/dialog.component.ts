@@ -16,6 +16,8 @@ export class DialogComponent {
       title: string;
       oneButton: boolean;
       buttonText?: string;
+      buttonTextConfirm?: string;
+      buttonTextNoConfirm?: string;
     }
   ) {}
 

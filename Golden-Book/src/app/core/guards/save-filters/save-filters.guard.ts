@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanDeactivate,
-  RouterStateSnapshot,
-  UrlTree,
-} from '@angular/router';
+import { CanDeactivate } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { BooksComponent } from 'src/app/features/books/components/books/books.component';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
@@ -23,6 +17,8 @@ export class SaveFiltersGuard implements CanDeactivate<BooksComponent> {
         description: 'Do you want to save filters?',
         title: 'Save Filters',
         oneButton: false,
+        buttonTextConfirm: 'Yes',
+        buttonTextNoConfirm: 'No',
       },
       position: { top: '40px' },
     });

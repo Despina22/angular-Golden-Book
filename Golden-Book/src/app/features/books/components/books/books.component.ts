@@ -12,9 +12,10 @@ import { DialogComponent } from 'src/app/shared/components/dialog/dialog.compone
 })
 export class BooksComponent implements OnInit, OnDestroy {
   books: Book[];
-  private unsubscribe$: Subject<void> = new Subject<void>();
   categoryName: string[] = [];
   searchedValue: string = '';
+
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(private bookService: BookService, private dialog: MatDialog) {}
 
@@ -44,27 +45,6 @@ export class BooksComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.dialog
-      .open(DialogComponent, {
-        data: {
-          description: 'Do you want to save filters?',
-          title: 'Save Filters',
-          oneButton: false,
-        },
-        position: { top: '40px' },
-      })
-      .afterClosed()
-      .subscribe((shouldSave) => {
-        if (shouldSave) {
-          const filter = {
-            searchedValue: this.searchedValue,
-            categoryName: this.categoryName,
-          };
-
-          localStorage.setItem('filters', JSON.stringify(filter));
-        }
-      });
-
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }

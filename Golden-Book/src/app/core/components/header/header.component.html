@@ -10,11 +10,10 @@
   <h1 class="main-heading">Golden Book.</h1>
   <span class="example-spacer"></span>
 
-  <button
-    mat-icon-button
-    class="user"
-    aria-label="Example icon-button with person icon"
-  >
+  <button mat-button [matMenuTriggerFor]="menu" class="user" #menuTrigger>
     <mat-icon>person</mat-icon>
   </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
 </mat-toolbar>

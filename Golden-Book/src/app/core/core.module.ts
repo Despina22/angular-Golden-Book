@@ -12,11 +12,24 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './auth/components/login/login.component';
+import { LayoutBooksComponent } from './components/layout-books/layout-books.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    LoginComponent,
+    LayoutBooksComponent,
+  ],
   imports: [
     CommonModule,
+    FormsModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -24,9 +37,18 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatExpansionModule,
     MatMenuModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule,
     MatDialogModule,
   ],
-  exports: [HeaderComponent, FooterComponent, SidebarComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    LoginComponent,
+    LayoutBooksComponent,
+  ],
 })
 export class CoreModule {}

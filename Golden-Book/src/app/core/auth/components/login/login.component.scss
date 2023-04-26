@@ -1,0 +1,25 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/background-image.scss";
+
+:host {
+  .form-content {
+    background: url("../../../../../assets/images/golden-book-image.png"),
+      linear-gradient(to right, $primary-color 50%, rgba(129, 124, 112, 255))
+        100% 100% fixed;
+    background-repeat: no-repeat;
+    background-position: left 15% bottom 50%, center;
+    background-size: 700px 630px, contain;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card-content {
+      width: 40vw;
+      background-color: $books-background-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

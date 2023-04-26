@@ -18,7 +18,7 @@
         class="dialog-btn"
         (click)="closeYes()"
       >
-        Yes
+        {{ data.buttonTextConfirm }}
       </button>
       <button
         mat-button
@@ -26,7 +26,7 @@
         class="dialog-btn"
         (click)="closeNo()"
       >
-        No
+        {{ data.buttonTextNoConfirm }}
       </button>
     </ng-container>
   </div>

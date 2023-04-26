@@ -100,5 +100,25 @@
       "id": 5,
       "name": "Children's Action"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Despina",
+      "lastName": "Stankovska",
+      "email": "despina.stankovska@gmail.com",
+      "password": "123",
+      "country": "Macedonia",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "firstName": "Stefan",
+      "lastName": "Trivunovic",
+      "email": "stefan@gmail.com",
+      "password": "123456789",
+      "country": "Serbia",
+      "role": "user"
+    }
   ]
 }
