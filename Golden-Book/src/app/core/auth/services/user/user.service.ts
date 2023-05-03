@@ -20,4 +20,8 @@ export class UserService {
       `${this.userUrl}?email=${email}&password=${password}`
     );
   }
+
+  userRegistration(user: User): Observable<User> {
+    return this.http.post<User>(this.userUrl, user);
+  }
 }

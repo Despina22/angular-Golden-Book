@@ -1,0 +1,19 @@
+@import "../../../../../styles/background-image.scss";
+@import "../../../../../styles/variables.scss";
+
+:host {
+  .wrapper {
+    background: url("../../../../../assets/images/golden-book-image.png"),
+      linear-gradient(to right, $primary-color 50%, rgba(129, 124, 112, 255))
+        100% 100% fixed;
+    background-repeat: no-repeat;
+    background-position: left 15% bottom 50%, center;
+    background-size: 680px 540px, contain;
+  }
+
+  .forms {
+    width: 90vw;
+    height: auto;
+    margin: auto;
+  }
+}

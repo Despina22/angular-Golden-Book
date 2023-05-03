@@ -9,6 +9,7 @@ import { map } from 'rxjs';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  hide = true;
   email: string = '';
   password: string = '';
 

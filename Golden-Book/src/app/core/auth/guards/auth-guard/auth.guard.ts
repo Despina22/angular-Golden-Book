@@ -1,26 +1,17 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanLoad,
-  Route,
-  Router,
-  RouterStateSnapshot,
-  UrlSegment,
-  UrlTree,
-} from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, CanActivateChild, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate, CanLoad {
+export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
     return this.checkLogin();
   }
-  canLoad(): boolean {
+
+  canActivateChild(): boolean {
     return this.checkLogin();
   }
 
@@ -30,7 +21,7 @@ export class AuthGuard implements CanActivate, CanLoad {
       return true;
     }
 
-    this.router.navigate(['/login']);
+    this.router.navigate(['registration/login']);
     return false;
   }
 }

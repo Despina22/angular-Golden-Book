@@ -1,17 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { LoginComponent } from './core/auth/components/login/login.component';
-import { LayoutBooksComponent } from './core/components/layout-books/layout-books.component';
-import { AuthGuard } from './core/auth/guards/auth.guard';
+import { RegistrationComponent } from './core/auth/components/registration/registration.component';
+import { AuthGuard } from './core/auth/guards/auth-guard/auth.guard';
+import { LayoutBooksComponent } from './core/layouts/components/layout-books/layout-books.component';
+import { LayoutRegistrationComponent } from './core/layouts/components/layout-registration/layout-registration.component';
+import { HomepageTextComponent } from './features/homepage/components/homepage-text/homepage-text.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { AdminGuard } from './core/auth/guards/admin-guard/admin.guard';
 
 const appRouter: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'registration', pathMatch: 'full' },
+  {
+    path: 'registration',
+    component: LayoutRegistrationComponent,
+    children: [
+      { path: '', component: HomepageTextComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'sign-in', component: RegistrationComponent },
+    ],
+  },
   {
     path: '',
     component: LayoutBooksComponent,
     canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
       { path: '', redirectTo: 'books', pathMatch: 'full' },
       {
@@ -20,15 +34,14 @@ const appRouter: Routes = [
           import('../app/features/books/books.module').then(
             (module) => module.BooksModule
           ),
-        canLoad: [AuthGuard],
       },
       {
         path: 'admin',
+        canActivate: [AdminGuard],
         loadChildren: () =>
           import('../app/features/admin/admin.module').then(
             (module) => module.AdminModule
           ),
-        canLoad: [AuthGuard],
       },
     ],
   },

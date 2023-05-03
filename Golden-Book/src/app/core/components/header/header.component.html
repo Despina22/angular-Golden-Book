@@ -1,4 +1,4 @@
-<mat-toolbar class="header">
+<mat-toolbar class="header" *ngIf="!isLoginMode">
   <button
     mat-icon-button
     class="icon"
@@ -16,4 +16,24 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="logout()">Logout</button>
   </mat-menu>
+</mat-toolbar>
+
+<mat-toolbar class="registration-header" *ngIf="isLoginMode">
+  <h1 class="registration-main-heading">Golden Book.</h1>
+  <span class="example-spacer"></span>
+
+  <button
+    mat-button
+    routerLink="/registration/login"
+    class="registration-btn-login btn"
+  >
+    Login
+  </button>
+  <button
+    mat-button
+    class="registration-btn-signin btn"
+    routerLink="/registration/sign-in"
+  >
+    Sign in
+  </button>
 </mat-toolbar>

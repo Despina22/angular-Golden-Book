@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { HomepageTextComponent } from './homepage/components/homepage-text/homepage-text.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomepageTextComponent
+  ],
   imports: [CommonModule],
   exports: [],
 })

@@ -106,7 +106,7 @@
       "id": 1,
       "firstName": "Despina",
       "lastName": "Stankovska",
-      "email": "despina.stankovska@gmail.com",
+      "email": "despina@gmail.com",
       "password": "123",
       "country": "Macedonia",
       "role": "admin"
@@ -119,6 +119,20 @@
       "password": "123456789",
       "country": "Serbia",
       "role": "user"
+    }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "name": "Macedonia"
+    },
+    {
+      "id": 2,
+      "name": "Serbia"
+    },
+    {
+      "id": 3,
+      "name": "USA"
     }
   ]
 }

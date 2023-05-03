@@ -13,23 +13,30 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './auth/components/login/login.component';
-import { LayoutBooksComponent } from './components/layout-books/layout-books.component';
+import { LayoutBooksComponent } from './layouts/components/layout-books/layout-books.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LayoutRegistrationComponent } from './layouts/components/layout-registration/layout-registration.component';
+import { RegistrationComponent } from './auth/components/registration/registration.component';
+import { MatSelectModule } from '@angular/material/select';
+
+const COMPONENTS = [
+  HeaderComponent,
+  FooterComponent,
+  SidebarComponent,
+  LoginComponent,
+  LayoutBooksComponent,
+  LayoutRegistrationComponent,
+];
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent,
-    LoginComponent,
-    LayoutBooksComponent,
-  ],
+  declarations: [...COMPONENTS, RegistrationComponent],
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -40,15 +47,10 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    RouterModule,
     MatDialogModule,
+    MatSelectModule,
+    RouterModule,
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent,
-    LoginComponent,
-    LayoutBooksComponent,
-  ],
+  exports: [...COMPONENTS],
 })
 export class CoreModule {}

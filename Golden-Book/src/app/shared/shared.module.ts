@@ -8,6 +8,7 @@ import { MaterialModule } from './material/material.module';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { MessageDialogComponent } from './components/message-dialog/message-dialog.component';
 
 const COMPONENTS = [
   SearchComponent,
@@ -16,7 +17,7 @@ const COMPONENTS = [
   PageNotFoundComponent,
 ];
 @NgModule({
-  declarations: [...COMPONENTS, DialogComponent],
+  declarations: [...COMPONENTS, DialogComponent, MessageDialogComponent],
   imports: [CommonModule, FormsModule, MaterialModule],
   exports: [...COMPONENTS],
 })

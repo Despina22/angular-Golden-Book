@@ -103,22 +103,48 @@
   ],
   "users": [
     {
-      "id": 1,
       "firstName": "Despina",
       "lastName": "Stankovska",
-      "email": "despina.stankovska@gmail.com",
+      "email": "despina@yahoo.com",
       "password": "123",
-      "country": "Macedonia",
+      "countryId": 1,
+      "createdAt": "2023-04-28T17:24:06.141Z",
+      "id": 2,
       "role": "admin"
     },
     {
+      "firstName": "Marijan",
+      "lastName": "Stanojevic",
+      "email": "marijan@yahoo.com",
+      "password": "123",
+      "countryId": 2,
+      "role": "user",
+      "createdAt": "2023-04-28T19:15:46.095Z",
+      "id": 3
+    },
+    {
+      "firstName": "Marijannnn",
+      "lastName": "Stanojevic",
+      "email": "despina@yahoo.com",
+      "password": "z",
+      "countryId": 1,
+      "role": "user",
+      "createdAt": "2023-04-28T19:22:04.854Z",
+      "id": 4
+    }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "name": "Macedonia"
+    },
+    {
       "id": 2,
-      "firstName": "Stefan",
-      "lastName": "Trivunovic",
-      "email": "stefan@gmail.com",
-      "password": "123456789",
-      "country": "Serbia",
-      "role": "user"
+      "name": "Serbia"
+    },
+    {
+      "id": 3,
+      "name": "USA"
     }
   ]
 }

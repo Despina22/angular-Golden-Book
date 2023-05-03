@@ -1,8 +1,11 @@
 @import "../../../../styles/variables.scss";
 @import "../../../../styles/error-wrapper.scss";
+@import "../../../../styles/background-image.scss";
 
 :host {
   .wrapper {
     @include error-wrapper;
+    @include background-image;
+    background-color: $primary-color;
   }
 }

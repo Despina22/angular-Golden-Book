@@ -1,9 +1,0 @@
-@import "../../../../styles/variables.scss";
-@import "../../../../styles/background-image.scss";
-
-:host {
-  .wrapper {
-    @include background-image;
-    background-color: $primary-color;
-  }
-}

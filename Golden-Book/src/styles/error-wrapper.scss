@@ -1,8 +1,7 @@
 @mixin error-wrapper {
-  max-width: 85vw;
   color: $font-color;
   margin: auto;
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

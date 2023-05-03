@@ -55,4 +55,44 @@
       }
     }
   }
+
+  .registration-header {
+    padding: 60px 110px;
+    background-color: transparent;
+
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+
+    .registration-main-heading {
+      font-size: 33px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: $font-color;
+    }
+
+    .btn {
+      font-size: 18px;
+      border: 1px solid transparent;
+      font-weight: 500;
+    }
+
+    .registration-btn-login {
+      color: rgba(242, 239, 220, 255);
+      margin: 0px 20px;
+    }
+
+    .registration-btn-login:hover {
+      color: rgba(0, 0, 0);
+      background-color: rgba(242, 239, 220, 255);
+      padding: 0px 20px;
+    }
+
+    .registration-btn-signin {
+      background-color: rgba(242, 239, 220, 255);
+      color: #000000;
+      padding: 0px 15px;
+      border-radius: 3px;
+    }
+  }
 }

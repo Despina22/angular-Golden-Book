@@ -23,7 +23,7 @@
           </mat-nav-list>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel class="expansion-panel" *ngIf="isUserAdmin">
           <mat-expansion-panel-header
             routerLink="admin/books"
             routerLinkActive="active"

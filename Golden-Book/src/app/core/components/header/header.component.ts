@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarService } from 'src/app/core/services/sidebar/sidebar.service';
 
@@ -8,6 +8,7 @@ import { SidebarService } from 'src/app/core/services/sidebar/sidebar.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  @Input() isLoginMode: boolean;
   toggle: boolean = false;
   constructor(private sidebarService: SidebarService, private router: Router) {}
 
@@ -18,6 +19,6 @@ export class HeaderComponent {
 
   logout() {
     localStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/registration']);
   }
 }

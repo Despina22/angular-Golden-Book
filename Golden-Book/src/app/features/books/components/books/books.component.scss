@@ -1,35 +1,37 @@
 @import "../../../../../styles/variables.scss";
 
-.main-panel {
-  max-width: 85vw;
-  margin: auto;
+:host {
+  .main-panel {
+    max-width: 85vw;
+    margin: auto;
 
-  .heading {
-    color: $font-color;
-    font-size: 28px;
-    font-weight: 700;
-    margin: 15px 0px 0px 0px;
-  }
-
-  .forms {
-    max-width: 80vw;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
-
-    .filter {
-      display: flex;
-      align-items: center;
+    .heading {
+      color: $font-color;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 15px 0px 0px 0px;
     }
-  }
 
-  .books-wrapper {
-    max-width: 80vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border: transparent;
+    .forms {
+      max-width: 80vw;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+
+      .filter {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .books-wrapper {
+      max-width: 80vw;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border: transparent;
+    }
   }
 }
