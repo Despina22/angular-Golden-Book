@@ -10,6 +10,7 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FullNamePipe } from '../pipes/full-name.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     BookComponent,
     BookDetailsComponent,
     CategoryColorDirective,
+    FullNamePipe,
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,8 @@
 <div class="wrapper" *ngIf="bookDetails">
   <div class="main-heading-container">
-    <h2 class="main-heading">Book Overview - {{ bookDetails.title }}</h2>
+    <h2 class="main-heading">
+      Book Overview - {{ bookDetails.title | titlecase }}
+    </h2>
   </div>
   <mat-card
     class="book-overview-content"
@@ -8,7 +10,7 @@
   >
     <mat-card-header class="book-overview-title">
       <mat-card-title class="book-overview-heading">{{
-        bookDetails.title
+        bookDetails.title | titlecase
       }}</mat-card-title>
     </mat-card-header>
     <div class="all-description">
@@ -18,7 +20,7 @@
       <div class="description">
         <p style="color: red">BookId: # {{ bookId }}</p>
         <h4 class="book-overview-text">
-          {{ bookDetails.author }},
+          {{ bookDetails | fullName }},
           {{ bookDetails.publishedDate | date : "yyyy" }}
         </h4>
         <p class="book-overview-text">Country: {{ bookDetails.country }}</p>
@@ -26,7 +28,7 @@
         <p class="book-overview-text">ISBN: {{ bookDetails.isbn }}</p>
         <p class="book-overview-description">{{ bookDetails.description }}</p>
         <h4 class="book-overview-text">
-          {{ bookDetails.author }},{{ bookDetails.country }}
+          {{ bookDetails | fullName }},{{ bookDetails.country }}
         </h4>
         <p class="book-overview-author-description">
           {{ bookDetails.authorDescription }}

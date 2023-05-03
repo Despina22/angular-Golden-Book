@@ -9,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { MessageDialogComponent } from './components/message-dialog/message-dialog.component';
+import { BorderDirective } from './directives/border.directive';
 
 const COMPONENTS = [
   SearchComponent,
@@ -17,7 +18,7 @@ const COMPONENTS = [
   PageNotFoundComponent,
 ];
 @NgModule({
-  declarations: [...COMPONENTS, DialogComponent, MessageDialogComponent],
+  declarations: [...COMPONENTS, DialogComponent, MessageDialogComponent, BorderDirective],
   imports: [CommonModule, FormsModule, MaterialModule],
   exports: [...COMPONENTS],
 })

@@ -5,7 +5,9 @@
     matInput
     name="search"
     #searchField
-    [value]="defaultValue"
+    [value]="defaultValue | lowercase"
+    (input)="defaultValue = searchField.value"
+    appBorder
   />
   <mat-icon (click)="onSearch(searchField.value)">search</mat-icon>
 </mat-form-field>
