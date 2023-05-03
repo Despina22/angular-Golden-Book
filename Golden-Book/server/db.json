@@ -121,16 +121,6 @@
       "role": "user",
       "createdAt": "2023-04-28T19:15:46.095Z",
       "id": 3
-    },
-    {
-      "firstName": "Marijannnn",
-      "lastName": "Stanojevic",
-      "email": "despina@yahoo.com",
-      "password": "z",
-      "countryId": 1,
-      "role": "user",
-      "createdAt": "2023-04-28T19:22:04.854Z",
-      "id": 4
     }
   ],
   "countries": [

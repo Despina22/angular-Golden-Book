@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CanDeactivate } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { BooksComponent } from 'src/app/features/books/components/books/books.component';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 
@@ -12,6 +12,9 @@ export class SaveFiltersGuard implements CanDeactivate<BooksComponent> {
   constructor(private dialog: MatDialog) {}
 
   canDeactivate(component: BooksComponent): Observable<boolean> {
+    if(!localStorage.getItem('userData')) {
+      return of(true)
+    }
     const modal = this.dialog.open(DialogComponent, {
       data: {
         description: 'Do you want to save filters?',
