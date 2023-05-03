@@ -12,8 +12,8 @@ export class SaveFiltersGuard implements CanDeactivate<BooksComponent> {
   constructor(private dialog: MatDialog) {}
 
   canDeactivate(component: BooksComponent): Observable<boolean> {
-    if(!localStorage.getItem('userData')) {
-      return of(true)
+    if (!localStorage.getItem('userData')) {
+      return of(true);
     }
     const modal = this.dialog.open(DialogComponent, {
       data: {
