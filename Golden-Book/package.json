@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start-app": "ng serve --port=4200 --ssl --open",
-    "start-db": "json-server --watch server/db.json --port=3000"
+    "start-db": "json-server --watch server/db.json --port=3000",
+    "start-all": " concurrently \"json-server --watch server/db.json --port=3000\" \"json-server --watch server/db.json --port=3000\""
   },
   "private": true,
   "dependencies": {

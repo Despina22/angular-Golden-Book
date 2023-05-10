@@ -117,16 +117,6 @@
       "createdAt": "2023-04-28T17:24:06.141Z",
       "id": 2,
       "role": "admin"
-    },
-    {
-      "firstName": "Marijan",
-      "lastName": "Stanojevic",
-      "email": "marijan@yahoo.com",
-      "password": "123",
-      "countryId": 2,
-      "role": "user",
-      "createdAt": "2023-04-28T19:15:46.095Z",
-      "id": 3
     }
   ],
   "countries": [

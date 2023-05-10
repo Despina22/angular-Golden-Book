@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `npm run start-app`
 `npm run start-db`
+`npm run start-all`
 
 ## Development server
 
