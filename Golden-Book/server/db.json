@@ -117,6 +117,16 @@
       "createdAt": "2023-04-28T17:24:06.141Z",
       "id": 2,
       "role": "admin"
+    },
+    {
+      "firstName": "Despina",
+      "lastName": "Stankovska",
+      "email": "despina@gmail.com",
+      "password": "123456789",
+      "countryId": 1,
+      "role": "user",
+      "createdAt": "2023-05-11T08:09:52.760Z",
+      "id": 3
     }
   ],
   "countries": [
