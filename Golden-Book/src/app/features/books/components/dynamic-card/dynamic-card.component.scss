@@ -1,0 +1,25 @@
+@import "../../../../../styles/variables.scss";
+
+:host {
+  width: 32%;
+  margin-top: 10px;
+  background-color: $books-background-color;
+  border-radius: 3px;
+
+  .book-content {
+    background: transparent;
+    padding: 10px;
+    border: none;
+
+    mat-card-header {
+      &::ng-deep .mat-card-header-text {
+        margin: 0px;
+      }
+    }
+
+    .card-content {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

@@ -11,6 +11,7 @@ import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FullNamePipe } from '../pipes/full-name.pipe';
+import { DynamicCardComponent } from './components/dynamic-card/dynamic-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FullNamePipe } from '../pipes/full-name.pipe';
     BookDetailsComponent,
     CategoryColorDirective,
     FullNamePipe,
+    DynamicCardComponent,
   ],
   imports: [
     CommonModule,

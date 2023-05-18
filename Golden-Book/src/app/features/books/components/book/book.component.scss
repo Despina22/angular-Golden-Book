@@ -12,87 +12,80 @@
     }
   }
 
-  .book-content {
-    background: transparent;
-    padding: 10px;
-    border: none;
-
-    mat-card-header {
-      &::ng-deep .mat-card-header-text {
-        margin: 0px;
-      }
+  mat-card-header {
+    &::ng-deep .mat-card-header-text {
+      margin: 0px;
     }
+  }
 
-    .book-heading {
-      width: 300px;
-      max-height: 25px;
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      cursor: default;
-    }
+  .book-heading {
+    width: 300px;
+    max-height: 25px;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: default;
+  }
 
-    .all-description {
-      display: flex;
-      justify-content: space-between;
+  .all-description {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-content {
+    margin-bottom: 0px;
+  }
 
-      .card-content {
-        margin-bottom: 0px;
-      }
+  .img {
+    margin-right: 15px;
+    width: 100px;
+    height: 155px;
+    border-radius: 3px;
+  }
+  .author {
+    max-width: 250px;
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-      .img {
-        margin-right: 15px;
-        width: 100px;
-        height: 155px;
-        border-radius: 3px;
-      }
-      .author {
-        max-width: 250px;
-        font-size: 14px;
-        margin: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+  .book-category {
+    max-width: 250px;
+    height: 20px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
-      .book-category {
-        max-width: 250px;
-        height: 20px;
-        font-size: 13px;
-        margin-bottom: 8px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
+  .book-description {
+    height: 75px;
+    font-size: 13px;
+    overflow: hidden;
+    display: -webkit-box;
+    // max-width: 200px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
 
-      .book-description {
-        height: 75px;
-        font-size: 13px;
-        overflow: hidden;
-        display: -webkit-box;
-        // max-width: 200px;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-      }
+  .card-actions {
+    margin-bottom: 0px;
 
-      .card-actions {
-        margin-bottom: 0px;
-
-        .book-btn {
-          color: rgb(219, 215, 198);
-          background-color: rgb(131, 126, 114);
-          border: none;
-          border-radius: 3px;
-          padding: 5px 15px;
-          margin: 0px 5px;
-          font-size: 10px;
-          text-transform: uppercase;
-          cursor: pointer;
-        }
-      }
+    .book-btn {
+      color: rgb(219, 215, 198);
+      background-color: rgb(131, 126, 114);
+      border: none;
+      border-radius: 3px;
+      padding: 5px 15px;
+      margin: 0px 5px;
+      font-size: 10px;
+      text-transform: uppercase;
+      cursor: pointer;
     }
   }
 
